@@ -8,13 +8,21 @@
 // 4. Replace placeholder data with props/state
 
 import { useState } from "react";
+import type { ScreenName } from "../types/domain";
 
-interface SistemHatasiProps {}
+interface SistemHatasiProps {
+  onRetry: () => void;
+  onClearData: () => void;
+  onNavigate: (screen: ScreenName) => void;
+}
 
-export function SistemHatasi(props: SistemHatasiProps) {
+export function SistemHatasi({
+  onRetry,
+  onClearData,
+  onNavigate,
+}: SistemHatasiProps) {
   return (
-    <>
-      {/* Error Card Container */}
+    <div className="min-h-screen flex items-center justify-center bg-background p-margin">
       <main className="w-full max-w-[480px]">
       {/* Ambient Glow behind card for subtle depth */}
       <div className="relative">
@@ -35,10 +43,10 @@ export function SistemHatasi(props: SistemHatasiProps) {
                       </p>
       {/* Actions */}
       <div className="flex flex-col sm:flex-row gap-gutter w-full">
-      <button className="flex-1 min-h-touch-target px-md py-sm rounded-lg border border-outline-variant bg-transparent text-on-surface font-body-base text-body-base hover:bg-surface-variant focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface-container-high transition-all" type="button">
+      <button className="flex-1 min-h-touch-target px-md py-sm rounded-lg border border-outline-variant bg-transparent text-on-surface font-body-base text-body-base hover:bg-surface-variant focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface-container-high transition-all cursor-pointer" type="button" onClick={onClearData}>
                               Verileri Temizle
                           </button>
-      <button className="flex-1 min-h-touch-target px-md py-sm rounded-lg border border-transparent bg-primary-container text-on-primary-container font-body-base text-body-base hover:bg-primary-container/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface-container-high transition-all flex items-center justify-center gap-xs" type="button">
+      <button className="flex-1 min-h-touch-target px-md py-sm rounded-lg border border-transparent bg-primary-container text-on-primary-container font-body-base text-body-base hover:bg-primary-container/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface-container-high transition-all flex items-center justify-center gap-xs cursor-pointer" type="button" onClick={onRetry}>
       <span className="material-symbols-outlined text-[18px]">refresh</span>
                               Tekrar Dene
                           </button>
@@ -51,6 +59,6 @@ export function SistemHatasi(props: SistemHatasiProps) {
       </div>
       </div>
       </main>
-    </>
+    </div>
   );
 }

@@ -8,10 +8,29 @@
 // 4. Replace placeholder data with props/state
 
 import { useState } from "react";
+import type { Mission, TeamMember, EquipmentPack, WeatherWindow, RouteCheckpoint, RiskFlag, ScreenName } from "../types/domain";
 
-interface IstatistiklerVeAnalizProps {}
+interface IstatistiklerVeAnalizProps {
+  missions: Mission[];
+  teamMembers: TeamMember[];
+  equipmentPacks: EquipmentPack[];
+  weatherWindows: WeatherWindow[];
+  routeCheckpoints: RouteCheckpoint[];
+  riskFlags: RiskFlag[];
+  onNavigate: (screen: ScreenName) => void;
+  onNewMission: () => void;
+}
 
-export function IstatistiklerVeAnaliz(props: IstatistiklerVeAnalizProps) {
+export function IstatistiklerVeAnaliz({
+  missions,
+  teamMembers,
+  equipmentPacks,
+  weatherWindows,
+  routeCheckpoints,
+  riskFlags,
+  onNavigate,
+  onNewMission,
+}: IstatistiklerVeAnalizProps) {
   return (
     <>
       {/* SideNavBar */}
@@ -22,23 +41,23 @@ export function IstatistiklerVeAnaliz(props: IstatistiklerVeAnalizProps) {
       </div>
       <div className="flex-1 flex flex-col gap-1 font-inter antialiased text-sm tracking-tight">
       {/* Ana Ekran (Inactive) */}
-      <a className="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-100 hover:bg-slate-800/30 transition-colors hover:bg-slate-800/50 hover:text-white active:scale-[0.98] transition-transform duration-150" href="#">
+      <a className="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-100 hover:bg-slate-800/30 transition-colors hover:bg-slate-800/50 hover:text-white active:scale-[0.98] transition-transform duration-150 cursor-pointer" onClick={() => onNavigate('dashboard')}>
       <span className="material-symbols-outlined">dashboard</span>
       <span>Ana Ekran</span>
       </a>
       {/* İstatistikler (Active) */}
-      <a className="flex items-center gap-3 px-4 py-3 text-blue-400 bg-slate-800/50 border-r-2 border-blue-500 hover:bg-slate-800/50 hover:text-white active:scale-[0.98] transition-transform duration-150" href="#">
+      <a className="flex items-center gap-3 px-4 py-3 text-blue-400 bg-slate-800/50 border-r-2 border-blue-500 hover:bg-slate-800/50 hover:text-white active:scale-[0.98] transition-transform duration-150 cursor-pointer" onClick={() => onNavigate('stats')}>
       <span className="material-symbols-outlined">leaderboard</span>
       <span>İstatistikler</span>
       </a>
       {/* Ayarlar (Inactive) */}
-      <a className="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-100 hover:bg-slate-800/30 transition-colors hover:bg-slate-800/50 hover:text-white active:scale-[0.98] transition-transform duration-150" href="#">
+      <a className="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-100 hover:bg-slate-800/30 transition-colors hover:bg-slate-800/50 hover:text-white active:scale-[0.98] transition-transform duration-150 cursor-pointer" onClick={() => onNavigate('settings')}>
       <span className="material-symbols-outlined">settings</span>
       <span>Ayarlar</span>
       </a>
       </div>
       <div className="px-6 mt-auto">
-      <button className="w-full h-touch-target bg-primary-container text-white font-h3 text-h3 rounded-DEFAULT hover:bg-primary-container/90 transition-colors flex items-center justify-center gap-2">
+      <button className="w-full h-touch-target bg-primary-container text-white font-h3 text-h3 rounded-DEFAULT hover:bg-primary-container/90 transition-colors flex items-center justify-center gap-2 cursor-pointer" onClick={onNewMission}>
       <span className="material-symbols-outlined" style={{fontSize: "18px"}}>add</span>
                       Yeni Görev Ekle
                   </button>
@@ -50,10 +69,10 @@ export function IstatistiklerVeAnaliz(props: IstatistiklerVeAnalizProps) {
       <header className="bg-slate-950/80 backdrop-blur-md docked full-width top-0 sticky z-40 border-b border-slate-800 flex justify-between items-center w-full px-6 py-4">
       <div className="text-xl font-black text-slate-100 font-inter text-sm font-medium">Aurora Expedition Console</div>
       <div className="flex items-center gap-4">
-      <button className="text-slate-400 hover:text-blue-400 transition-colors cursor-pointer active:opacity-80 flex items-center justify-center h-10 w-10 rounded-full hover:bg-surface-variant">
+      <button className="text-slate-400 hover:text-blue-400 transition-colors cursor-pointer active:opacity-80 flex items-center justify-center h-10 w-10 rounded-full hover:bg-surface-variant" onClick={() => onNavigate('profile')} aria-label="Bildirimler">
       <span className="material-symbols-outlined">notifications</span>
       </button>
-      <button className="text-slate-400 hover:text-blue-400 transition-colors cursor-pointer active:opacity-80 flex items-center justify-center h-10 w-10 rounded-full hover:bg-surface-variant">
+      <button className="text-slate-400 hover:text-blue-400 transition-colors cursor-pointer active:opacity-80 flex items-center justify-center h-10 w-10 rounded-full hover:bg-surface-variant" onClick={() => onNavigate('profile')} aria-label="Profil">
       <span className="material-symbols-outlined">account_circle</span>
       </button>
       </div>
@@ -88,8 +107,8 @@ export function IstatistiklerVeAnaliz(props: IstatistiklerVeAnalizProps) {
       <span className="material-symbols-outlined text-on-surface-variant" style={{fontSize: "18px"}}>explore</span>
       </div>
       <div className="mt-4 flex items-baseline gap-2">
-      <span className="font-h1 text-h1 text-on-surface text-3xl">342</span>
-      <span className="font-body-sm text-body-sm text-primary">+12% bu ay</span>
+      <span className="font-h1 text-h1 text-on-surface text-3xl">{missions.length}</span>
+      <span className="font-body-sm text-body-sm text-primary">+{missions.filter(m => new Date(m.createdAt).getMonth() === new Date().getMonth()).length} bu ay</span>
       </div>
       </div>
       {/* Card 2: Success Rate */}
@@ -99,10 +118,10 @@ export function IstatistiklerVeAnaliz(props: IstatistiklerVeAnalizProps) {
       <span className="material-symbols-outlined text-primary-container" style={{fontSize: "18px"}}>check_circle</span>
       </div>
       <div className="mt-4 flex items-baseline gap-2">
-      <span className="font-h1 text-h1 text-on-surface text-3xl">96.4<span className="text-xl text-on-surface-variant">%</span></span>
+      <span className="font-h1 text-h1 text-on-surface text-3xl">{missions.length > 0 ? Math.round((missions.filter(m => m.status === 'tamamlandi').length / missions.length) * 100) : 0}<span className="text-xl text-on-surface-variant">%</span></span>
       </div>
       <div className="w-full bg-surface-container-highest h-1 mt-3 rounded-full overflow-hidden">
-      <div className="bg-primary-container h-full w-[96.4%]"></div>
+      <div className="bg-primary-container h-full" style={{width: `${missions.length > 0 ? (missions.filter(m => m.status === 'tamamlandi').length / missions.length) * 100 : 0}%`}}></div>
       </div>
       </div>
       {/* Card 3: Equipment Usage */}
@@ -112,7 +131,7 @@ export function IstatistiklerVeAnaliz(props: IstatistiklerVeAnalizProps) {
       <span className="material-symbols-outlined text-on-surface-variant" style={{fontSize: "18px"}}>construction</span>
       </div>
       <div className="mt-4 flex items-baseline gap-2">
-      <span className="font-h1 text-h1 text-on-surface text-3xl">82<span className="text-xl text-on-surface-variant">%</span></span>
+      <span className="font-h1 text-h1 text-on-surface text-3xl">{equipmentPacks.length > 0 ? Math.round((equipmentPacks.filter(e => e.isAssigned).length / equipmentPacks.length) * 100) : 0}<span className="text-xl text-on-surface-variant">%</span></span>
       <span className="font-body-sm text-body-sm text-on-surface-variant">Kapasite</span>
       </div>
       </div>
@@ -123,8 +142,8 @@ export function IstatistiklerVeAnaliz(props: IstatistiklerVeAnalizProps) {
       <span className="material-symbols-outlined text-error" style={{fontSize: "18px"}}>severe_cold</span>
       </div>
       <div className="mt-4 flex items-baseline gap-2">
-      <span className="font-h1 text-h1 text-error text-3xl">14.5</span>
-      <span className="font-body-sm text-body-sm text-on-surface-variant">Saat</span>
+      <span className="font-h1 text-h1 text-error text-3xl">{weatherWindows.filter(w => !w.isUsable).length}</span>
+      <span className="font-body-sm text-body-sm text-on-surface-variant">Riskli Pencere</span>
       </div>
       </div>
       </div>

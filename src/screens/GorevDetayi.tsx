@@ -8,10 +8,40 @@
 // 4. Replace placeholder data with props/state
 
 import { useState } from "react";
+import type { Mission, TeamMember, EquipmentPack, WeatherWindow, RouteCheckpoint, RiskFlag, ScreenName } from "../types/domain";
 
-interface GorevDetayiProps {}
+interface GorevDetayiProps {
+  mission: Mission;
+  teamMembers: TeamMember[];
+  equipmentPacks: EquipmentPack[];
+  weatherWindows: WeatherWindow[];
+  routeCheckpoints: RouteCheckpoint[];
+  riskFlags: RiskFlag[];
+  onBack: () => void;
+  onEdit: () => void;
+  onArchive: () => void;
+  onDelete: () => void;
+  onNavigate: (screen: ScreenName) => void;
+}
 
-export function GorevDetayi(props: GorevDetayiProps) {
+export function GorevDetayi({
+  mission,
+  teamMembers,
+  equipmentPacks,
+  weatherWindows,
+  routeCheckpoints,
+  riskFlags,
+  onBack,
+  onEdit,
+  onArchive,
+  onDelete,
+  onNavigate,
+}: GorevDetayiProps) {
+  const missionTeam = teamMembers.filter((t) => mission.teamMembers.includes(t.id));
+  const missionEquip = equipmentPacks.filter((e) => mission.equipmentPacks.includes(e.id));
+  const missionWeather = weatherWindows.filter((w) => mission.weatherWindows.includes(w.id));
+  const missionCheckpoints = routeCheckpoints.filter((c) => mission.checkpoints.includes(c.id));
+  const missionRisks = riskFlags.filter((r) => mission.riskFlags.includes(r.id));
   return (
     <>
       {/* Navigation Shell suppressed for Task-Focused sub-page (Mission Detail implies 'Back' navigation) */}
@@ -19,28 +49,28 @@ export function GorevDetayi(props: GorevDetayiProps) {
       <header className="fixed top-0 left-0 w-full z-40 bg-surface-container-high/80 backdrop-blur-md border-b border-surface-container-highest">
       <div className="flex items-center justify-between px-6 py-4">
       <div className="flex items-center gap-4">
-      <button className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-variant transition-colors text-on-surface">
+      <button className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-variant transition-colors text-on-surface cursor-pointer" onClick={onBack} aria-label="Geri Dön">
       <span className="material-symbols-outlined" style={{fontVariationSettings: "'FILL' 0"}}>arrow_back</span>
       </button>
       <div>
-      <h1 className="font-h1 text-h1 text-on-surface">Operasyon Kış Fırtınası</h1>
-      <p className="font-body-sm text-body-sm text-on-surface-variant">ID: AX-9942 • Sektör: 4B Kuzey</p>
+      <h1 className="font-h1 text-h1 text-on-surface">{mission.name}</h1>
+      <p className="font-body-sm text-body-sm text-on-surface-variant">ID: {mission.id} • Sektör: {mission.sector}</p>
       </div>
       </div>
       <div className="flex items-center gap-3">
-      <button className="flex items-center gap-2 px-4 h-touch-target rounded bg-surface border border-outline-variant hover:bg-surface-variant text-on-surface transition-colors font-body-sm text-body-sm">
+      <button className="flex items-center gap-2 px-4 h-touch-target rounded bg-surface border border-outline-variant hover:bg-surface-variant text-on-surface transition-colors font-body-sm text-body-sm cursor-pointer" onClick={onEdit}>
       <span className="material-symbols-outlined text-[18px]">edit</span>
                           Düzenle
                       </button>
-      <button className="flex items-center gap-2 px-4 h-touch-target rounded bg-surface border border-outline-variant hover:bg-surface-variant text-on-surface transition-colors font-body-sm text-body-sm">
+      <button className="flex items-center gap-2 px-4 h-touch-target rounded bg-surface border border-outline-variant hover:bg-surface-variant text-on-surface transition-colors font-body-sm text-body-sm cursor-pointer" onClick={() => alert('Paylaşım bağlantısı panoya kopyalandı!')}>
       <span className="material-symbols-outlined text-[18px]">share</span>
                           Paylaş
                       </button>
-      <button className="flex items-center gap-2 px-4 h-touch-target rounded bg-surface border border-outline-variant hover:bg-surface-variant text-on-surface transition-colors font-body-sm text-body-sm">
+      <button className="flex items-center gap-2 px-4 h-touch-target rounded bg-surface border border-outline-variant hover:bg-surface-variant text-on-surface transition-colors font-body-sm text-body-sm cursor-pointer" onClick={onArchive}>
       <span className="material-symbols-outlined text-[18px]">archive</span>
                           Arşivle
                       </button>
-      <button className="flex items-center gap-2 px-6 h-touch-target rounded bg-primary-container hover:bg-blue-700 text-on-primary-container transition-colors font-h3 text-h3 ml-2 focus:ring-2 focus:ring-primary-container focus:outline-none">
+      <button className="flex items-center gap-2 px-6 h-touch-target rounded bg-primary-container hover:bg-blue-700 text-on-primary-container transition-colors font-h3 text-h3 ml-2 focus:ring-2 focus:ring-primary-container focus:outline-none cursor-pointer" onClick={() => alert('Görev başlatıldı!')}>
       <span className="material-symbols-outlined text-[18px]" style={{fontVariationSettings: "'FILL' 1"}}>play_arrow</span>
                           BAŞLAT
                       </button>
@@ -52,16 +82,16 @@ export function GorevDetayi(props: GorevDetayiProps) {
       {/* Status & Alert Row */}
       <div className="flex items-center justify-between mb-margin bg-surface-container rounded-lg p-md border border-surface-container-highest">
       <div className="flex items-center gap-4">
-      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-tertiary-container/20 text-tertiary font-label-caps text-label-caps border border-tertiary/30">
-                          BEKLEMEDE
+      <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full font-label-caps text-label-caps border ${mission.status === 'aktif' ? 'bg-primary/20 text-primary border-primary/30' : mission.status === 'beklemede' ? 'bg-tertiary-container/20 text-tertiary border-tertiary/30' : mission.status === 'tamamlandi' ? 'bg-outline/20 text-outline border-outline/30' : 'bg-surface-bright text-on-surface border-outline/30'}`}>
+                          {mission.status === 'aktif' ? 'AKTİF' : mission.status === 'beklemede' ? 'BEKLEMEDE' : mission.status === 'tamamlandi' ? 'TAMAMLANDI' : mission.status === 'arsivlendi' ? 'ARŞİVLENDİ' : 'İPTAL'}
                       </span>
       <span className="font-data-mono text-data-mono text-on-surface-variant">
-                          Tahmini Başlangıç: T-04:22:10
+                          Tahmini Başlangıç: {new Date(mission.estimatedStart).toLocaleTimeString('tr-TR', {hour:'2-digit', minute:'2-digit'})}Z
                       </span>
       </div>
       <div className="flex items-center gap-2 text-error">
       <span className="material-symbols-outlined" style={{fontVariationSettings: "'FILL' 1"}}>warning</span>
-      <span className="font-body-sm text-body-sm font-semibold">Risk: Yüksek (Sıcaklık Düşüşü Uyarısı)</span>
+      <span className="font-body-sm text-body-sm font-semibold">Risk: {missionRisks.length > 0 ? missionRisks[0].severity.toUpperCase() : 'DÜŞÜK'} ({missionRisks.length > 0 ? missionRisks[0].description : 'Aktif risk yok'})</span>
       </div>
       </div>
       {/* Bento Grid Layout */}
@@ -75,24 +105,24 @@ export function GorevDetayi(props: GorevDetayiProps) {
                               Görev Özeti
                           </h2>
       <p className="font-body-base text-body-base text-on-surface-variant mb-6">
-                              Sektör 4B'deki otomatik meteoroloji istasyonunun (İstasyon-Delta) sensör kalibrasyonu ve batarya değişimi. Yaklaşan Kategori 3 fırtına öncesi tamamlanması kritiktir. Tahmini dış mekan maruziyet süresi: 45 dakika.
+                              {mission.description}
                           </p>
       <div className="grid grid-cols-2 gap-4 border-t border-surface-container-highest pt-4">
       <div>
-      <span className="block font-label-caps text-label-caps text-outline mb-1">HEDEF KOORDİNATLAR</span>
-      <span className="font-data-mono text-data-mono text-on-surface">82° 10' G, 15° 30' D</span>
+      <span className="block font-label-caps text-label-caps text-outline mb-1">SEKTÖR</span>
+      <span className="font-data-mono text-data-mono text-on-surface">{mission.sector}</span>
       </div>
       <div>
-      <span className="block font-label-caps text-label-caps text-outline mb-1">EKİPMAN YÜKÜ</span>
-      <span className="font-body-sm text-body-sm text-on-surface">14 kg (Ağır Kit)</span>
+      <span className="block font-label-caps text-label-caps text-outline mb-1">TAHMİNİ SÜRE</span>
+      <span className="font-body-sm text-body-sm text-on-surface">{mission.estimatedDurationHours} saat</span>
       </div>
       <div>
-      <span className="block font-label-caps text-label-caps text-outline mb-1">ARAÇ TİPİ</span>
-      <span className="font-body-sm text-body-sm text-on-surface">Snowcat M2</span>
+      <span className="block font-label-caps text-label-caps text-outline mb-1">ÖNCELİK</span>
+      <span className="font-body-sm text-body-sm text-on-surface">{mission.priority}/5</span>
       </div>
       <div>
-      <span className="block font-label-caps text-label-caps text-outline mb-1">İLETİŞİM PROTOKOLÜ</span>
-      <span className="font-body-sm text-body-sm text-on-surface">Kanal 4 (Şifreli)</span>
+      <span className="block font-label-caps text-label-caps text-outline mb-1">OLUŞTURMA</span>
+      <span className="font-body-sm text-body-sm text-on-surface">{new Date(mission.createdAt).toLocaleDateString('tr-TR')}</span>
       </div>
       </div>
       </div>
@@ -103,33 +133,21 @@ export function GorevDetayi(props: GorevDetayiProps) {
       <span className="material-symbols-outlined text-primary">group</span>
                                   Saha Ekibi
                               </h2>
-      <span className="font-body-sm text-body-sm text-outline">3 Personel</span>
+      <span className="font-body-sm text-body-sm text-outline">{missionTeam.length} Personel</span>
       </div>
       <div className="flex flex-col gap-4">
-      <div className="flex items-center gap-3 p-3 rounded bg-surface border border-surface-container-highest">
-      <img alt="Dr. Elif Yılmaz" className="w-10 h-10 rounded-full border border-outline-variant" data-alt="A professional headshot of a polar researcher in dark winter gear against a stark technical background. High-contrast, modern corporate style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAydkVHlrKH4owYGq3PoCdI3CbopGbiVJOUeqChqG4x9H32TXDqOp0qG5SfKip3TCgEtq3QxTG6zRg5lsT_bZAiKw-fcoAoMWNLNhhcvQ5S6GykuEh2y8jHPcuxb4bvE_6hlMpzjzvgk-ZUVZUuEJrLq0_q7EW7ZywJwDla7-76VOc2auAahfSitIWBXSuQNU26-zI-AbLTDrEa-OO7JBFLUoFQ1Wjtl9W9vRY2oMKLBaWr-NH5s3zTpZVBPQC9fOkEAfLCkRmSGmGQ" />
+      {missionTeam.map((member) => (
+      <div key={member.id} className="flex items-center gap-3 p-3 rounded bg-surface border border-surface-container-highest">
+      <div className="w-10 h-10 rounded-full border border-outline-variant bg-surface-container-highest flex items-center justify-center">
+        <span className="material-symbols-outlined text-on-surface text-[18px]">person</span>
+      </div>
       <div className="flex-1">
-      <h3 className="font-h3 text-h3 text-on-surface">Dr. Elif Yılmaz</h3>
-      <p className="font-body-sm text-body-sm text-on-surface-variant">Görev Komutanı</p>
+      <h3 className="font-h3 text-h3 text-on-surface">{member.name}</h3>
+      <p className="font-body-sm text-body-sm text-on-surface-variant">{member.specialty}</p>
       </div>
-      <span className="material-symbols-outlined text-primary" title="Tıbbi Onaylı">medical_services</span>
+      <span className={`material-symbols-outlined ${member.isAvailable ? 'text-primary' : 'text-outline'}`} title={member.isAvailable ? 'Müsait' : 'Müsait Değil'}>{member.isAvailable ? 'medical_services' : 'pending'}</span>
       </div>
-      <div className="flex items-center gap-3 p-3 rounded bg-surface border border-surface-container-highest">
-      <img alt="Kaan Demir" className="w-10 h-10 rounded-full border border-outline-variant" data-alt="A professional headshot of a rugged field technician in heavy parka gear. Dark background, dramatic lighting, serious mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmt3ZeURTkWB5-ItpeiIXT7Tehj1lWfph5Lygmy4Esuer2-OzuAKZxAD04SYhnuJ-WE-umau8ccJJxoOHnH5tWceWKqUqKMn_DgO2VNspj0h9sgYkVeKIqvthul0vhKuVDtexozIKpDEl9oDMbz7VdzOk3afc3BcDpHLOxdy07sM7tQ3bWYynGFS6plXf_MSfYmutZEZH_KpxDiaQQ6ZqMHxbc7NdN2ldKOdGAwQjUiiGoaISyKCO1rj02MOZBSWr1WYCFqj0QfZUx" />
-      <div className="flex-1">
-      <h3 className="font-h3 text-h3 text-on-surface">Kaan Demir</h3>
-      <p className="font-body-sm text-body-sm text-on-surface-variant">Sistem Mühendisi</p>
-      </div>
-      <span className="material-symbols-outlined text-outline" title="Tıbbi Onay Bekliyor">pending</span>
-      </div>
-      <div className="flex items-center gap-3 p-3 rounded bg-surface border border-surface-container-highest">
-      <img alt="Ayşe Kaya" className="w-10 h-10 rounded-full border border-outline-variant" data-alt="A professional headshot of an environmental scientist wearing a heavy dark jacket. Neutral expression, stark lighting, technical aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWMNxXMm3xK5ZxMXcezShovAFatXCtUDkkorzVW1XQodP8_rSsvDsC6JW7clSEVItgtvmFuh2eDaCUMDZ4g7hjqqYAh_jdS2r3L-YDdtAk9PF3kTEAYILDWyOLpI48Ornv8uORDvXok6kJuQ1NTygzGX3u0iaXt7XxhnMO3OmgmpFhYSHvcqEL0ri6ejj-9lOQqnTGOYEVAlWny_tUtd3RsZLf976IlGvhQFfhWytkDFDMoQK2qox2csFVs-euDhD6Hp-jET5eD1Q1" />
-      <div className="flex-1">
-      <h3 className="font-h3 text-h3 text-on-surface">Ayşe Kaya</h3>
-      <p className="font-body-sm text-body-sm text-on-surface-variant">Navigasyon &amp; İletişim</p>
-      </div>
-      <span className="material-symbols-outlined text-primary" title="Tıbbi Onaylı">medical_services</span>
-      </div>
+      ))}
       </div>
       </div>
       </div>
@@ -174,21 +192,21 @@ export function GorevDetayi(props: GorevDetayiProps) {
       <div className="p-4 rounded bg-surface border border-surface-container-highest">
       <span className="block font-label-caps text-label-caps text-outline mb-2">DIŞ SICAKLIK</span>
       <div className="flex items-end gap-2 text-error">
-      <span className="font-h1 text-h1">-42°C</span>
+      <span className="font-h1 text-h1">{missionWeather[0] ? `${missionWeather[0].temperatureC}°C` : 'N/A'}</span>
       <span className="material-symbols-outlined mb-1">arrow_downward</span>
       </div>
       </div>
       <div className="p-4 rounded bg-surface border border-surface-container-highest">
       <span className="block font-label-caps text-label-caps text-outline mb-2">RÜZGAR HIZI</span>
       <div className="flex items-end gap-2 text-tertiary">
-      <span className="font-h1 text-h1">65 km/s</span>
+      <span className="font-h1 text-h1">{missionWeather[0] ? `${missionWeather[0].windSpeedKmh} km/s` : 'N/A'}</span>
       <span className="material-symbols-outlined mb-1">air</span>
       </div>
       </div>
       <div className="p-4 rounded bg-surface border border-surface-container-highest">
       <span className="block font-label-caps text-label-caps text-outline mb-2">GÖRÜŞ MESAFESİ</span>
       <div className="flex items-end gap-2 text-primary">
-      <span className="font-h1 text-h1">2.4 km</span>
+      <span className="font-h1 text-h1">{missionWeather[0] ? `${missionWeather[0].visibilityKm} km` : 'N/A'}</span>
       <span className="material-symbols-outlined mb-1">visibility_off</span>
       </div>
       </div>
