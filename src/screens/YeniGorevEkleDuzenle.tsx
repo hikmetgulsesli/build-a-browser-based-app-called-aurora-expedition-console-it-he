@@ -52,7 +52,7 @@ export function YeniGorevEkleDuzenle({
       setDescription(mission.description);
       setSector(mission.sector);
       setPriority(mission.priority);
-      setEstimatedStart(mission.estimatedStart);
+      setEstimatedStart(mission.estimatedStart.slice(0, 16));
       setEstimatedDuration(mission.estimatedDurationHours);
       setSelectedTeam(mission.teamMembers);
       setSelectedEquipment(mission.equipmentPacks);
@@ -102,7 +102,7 @@ export function YeniGorevEkleDuzenle({
       sector,
       status: mode === 'edit' && mission ? mission.status : 'beklemede',
       priority,
-      estimatedStart,
+      estimatedStart: new Date(estimatedStart).toISOString(),
       estimatedDurationHours: estimatedDuration,
       teamMembers: selectedTeam,
       equipmentPacks: selectedEquipment,
