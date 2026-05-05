@@ -7,7 +7,7 @@
 // 3. Add onClick/onChange handlers to interactive elements
 // 4. Replace placeholder data with props/state
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { Mission, TeamMember, EquipmentPack, WeatherWindow, RouteCheckpoint, ScreenName } from "../types/domain";
 
 interface YeniGorevEkleDuzenleProps {
@@ -24,12 +24,14 @@ interface YeniGorevEkleDuzenleProps {
 
 export function YeniGorevEkleDuzenle({
   mode,
+  mission,
   teamMembers,
   equipmentPacks,
   weatherWindows,
   routeCheckpoints,
   onSave,
   onCancel,
+  onNavigate,
 }: YeniGorevEkleDuzenleProps) {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
@@ -43,6 +45,35 @@ export function YeniGorevEkleDuzenle({
   const [selectedCheckpoints, setSelectedCheckpoints] = useState<string[]>([]);
   const [briefingNotes, setBriefingNotes] = useState('');
   const [errors, setErrors] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    if (mode === 'edit' && mission) {
+      setName(mission.name);
+      setDescription(mission.description);
+      setSector(mission.sector);
+      setPriority(mission.priority);
+      setEstimatedStart(mission.estimatedStart.slice(0, 16));
+      setEstimatedDuration(mission.estimatedDurationHours);
+      setSelectedTeam(mission.teamMembers);
+      setSelectedEquipment(mission.equipmentPacks);
+      setSelectedWeather(mission.weatherWindows);
+      setSelectedCheckpoints(mission.checkpoints);
+      setBriefingNotes(mission.briefingNotes);
+    } else if (mode === 'new') {
+      setName('');
+      setDescription('');
+      setSector('');
+      setPriority(3);
+      setEstimatedStart('');
+      setEstimatedDuration(4);
+      setSelectedTeam([]);
+      setSelectedEquipment([]);
+      setSelectedWeather([]);
+      setSelectedCheckpoints([]);
+      setBriefingNotes('');
+    }
+    setErrors({});
+  }, [mode, mission]);
 
   const toggleSelection = (id: string, current: string[], setter: (v: string[]) => void) => {
     if (current.includes(id)) {
@@ -69,15 +100,15 @@ export function YeniGorevEkleDuzenle({
       name,
       description,
       sector,
-      status: 'beklemede',
+      status: mode === 'edit' && mission ? mission.status : 'beklemede',
       priority,
-      estimatedStart,
+      estimatedStart: new Date(estimatedStart).toISOString(),
       estimatedDurationHours: estimatedDuration,
       teamMembers: selectedTeam,
       equipmentPacks: selectedEquipment,
       weatherWindows: selectedWeather,
       checkpoints: selectedCheckpoints,
-      riskFlags: [],
+      riskFlags: mode === 'edit' && mission ? mission.riskFlags : [],
       briefingNotes,
     });
   };
