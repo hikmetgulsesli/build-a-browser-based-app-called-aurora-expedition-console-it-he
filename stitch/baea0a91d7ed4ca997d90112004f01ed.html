@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profil - Aurora Console</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Design System Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#32343d",
+                    "surface": "#11131b",
+                    "secondary-fixed-dim": "#b9c7df",
+                    "on-tertiary-container": "#ffede6",
+                    "surface-container": "#1d1f27",
+                    "surface-tint": "#b4c5ff",
+                    "surface-container-low": "#191b23",
+                    "surface-container-high": "#282a32",
+                    "primary-container": "#2563eb",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "tertiary-fixed": "#ffdbcd",
+                    "surface-bright": "#373942",
+                    "outline-variant": "#434655",
+                    "secondary-fixed": "#d5e3fc",
+                    "surface-dim": "#11131b",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "on-surface-variant": "#c3c6d7",
+                    "primary": "#b4c5ff",
+                    "on-secondary": "#233144",
+                    "on-error": "#690005",
+                    "secondary-container": "#3c4a5e",
+                    "on-tertiary": "#581e00",
+                    "on-error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "inverse-primary": "#0053db",
+                    "on-secondary-container": "#abb9d1",
+                    "tertiary": "#ffb596",
+                    "inverse-on-surface": "#2e3039",
+                    "error-container": "#93000a",
+                    "on-tertiary-fixed": "#360f00",
+                    "secondary": "#b9c7df",
+                    "on-primary-container": "#eeefff",
+                    "on-secondary-fixed-variant": "#3a485b",
+                    "surface-variant": "#32343d",
+                    "primary-fixed": "#dbe1ff",
+                    "on-primary-fixed": "#00174b",
+                    "on-background": "#e1e2ed",
+                    "tertiary-container": "#bc4800",
+                    "background": "#11131b",
+                    "outline": "#8d90a0",
+                    "inverse-surface": "#e1e2ed",
+                    "surface-container-lowest": "#0c0e16",
+                    "on-secondary-fixed": "#0d1c2e",
+                    "on-primary": "#002a78",
+                    "on-surface": "#e1e2ed",
+                    "error": "#ffb4ab"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "32px",
+                    "touch-target": "44px",
+                    "gutter": "16px",
+                    "margin": "24px",
+                    "lg": "24px",
+                    "sm": "8px",
+                    "md": "16px",
+                    "base": "4px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "body-sm": ["Inter"],
+                    "data-mono": ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
+                    "h3": ["Inter"],
+                    "body-base": ["Inter"],
+                    "h1": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "h2": ["Inter"]
+            },
+            "fontSize": {
+                    "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "data-mono": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "h3": ["16px", {"lineHeight": "20px", "fontWeight": "600"}],
+                    "body-base": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "h1": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "label-caps": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "h2": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-base text-body-base h-screen overflow-hidden flex antialiased">
+<!-- JSON Anchor: SideNavBar -->
+<!-- Executing styles: style_component_shape, style_bg_color, style_separation_logic, style_typography -->
+<nav class="fixed left-0 top-0 h-full w-64 border-r border-slate-800 bg-slate-900 font-inter antialiased text-sm tracking-tight z-50">
+<!-- Executing style: style_shell_layout -->
+<div class="flex flex-col h-full py-6">
+<!-- Header section -->
+<div class="px-6 mb-8 flex flex-col gap-2">
+<!-- Executing style: style_brand_logo -->
+<div class="text-lg font-bold tracking-wider text-slate-100 uppercase">
+                    Aurora Console
+                </div>
+<div class="text-slate-400 text-xs tracking-widest uppercase">
+                    Mission Control
+                </div>
+</div>
+<!-- Navigation Links -->
+<div class="flex flex-col mt-4">
+<!-- Tab 0: Ana Ekran (Inactive) -->
+<!-- Executing style: style_inactive_navigation, style_universal_hover, style_interactions -->
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-100 hover:bg-slate-800/30 transition-colors hover:bg-slate-800/50 hover:text-white active:scale-[0.98] transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Ana Ekran</span>
+</a>
+<!-- Tab 1: İstatistikler (Inactive) -->
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-100 hover:bg-slate-800/30 transition-colors hover:bg-slate-800/50 hover:text-white active:scale-[0.98] transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span>İstatistikler</span>
+</a>
+<!-- Tab 2: Ayarlar (Active - matching Profile/Settings context) -->
+<!-- Executing style: style_active_navigation, style_interactions -->
+<a class="flex items-center gap-3 px-4 py-3 text-blue-400 bg-slate-800/50 border-r-2 border-blue-500 active:scale-[0.98] transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-medium">Ayarlar</span>
+</a>
+</div>
+<!-- Bottom CTA -->
+<div class="mt-auto px-6">
+<button class="w-full flex items-center justify-center gap-2 bg-blue-600 text-white rounded py-2.5 px-4 font-medium hover:bg-blue-700 transition-colors active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    Yeni Görev Ekle
+                </button>
+</div>
+</div>
+</nav>
+<!-- Main Canvas Area (Offset by SideNav width) -->
+<main class="ml-64 flex-1 flex flex-col h-full bg-background relative overflow-hidden">
+<!-- JSON Anchor: TopAppBar -->
+<!-- Executing styles: style_component_shape, style_bg_color, style_separation_logic, style_typography -->
+<header class="docked full-width top-0 sticky z-40 border-b border-slate-800 bg-slate-950/80 backdrop-blur-md font-inter text-sm font-medium">
+<!-- Executing style: style_shell_layout -->
+<div class="flex justify-between items-center w-full px-6 py-4">
+<!-- Brand Anchor -->
+<!-- Executing style: style_brand_logo -->
+<div class="text-xl font-black text-slate-100 flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-500">radar</span>
+                    Aurora Expedition Console
+                </div>
+<!-- Actions Container (search_bar: on_right logic + trailing_icon_actions) -->
+<div class="flex items-center gap-4">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-[18px]">search</span>
+<input class="bg-slate-900 border border-slate-700 rounded-full pl-10 pr-4 py-1.5 text-slate-200 placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all text-sm w-64" placeholder="Sistemde ara..." type="text"/>
+</div>
+<div class="flex items-center gap-2 border-l border-slate-800 pl-4 ml-2">
+<!-- Executing style: style_inactive_navigation, style_universal_hover, style_interactions -->
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:text-blue-400 transition-colors cursor-pointer active:opacity-80 hover:bg-slate-800/50">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<!-- Active action corresponding to current page intent -->
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-blue-500 font-bold cursor-pointer active:opacity-80 bg-blue-500/10">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- Canvas Content: Profile Panel -->
+<div class="flex-1 overflow-y-auto p-margin md:p-xl custom-scrollbar">
+<div class="max-w-6xl mx-auto">
+<!-- Section Header -->
+<div class="flex items-center justify-between mb-lg">
+<div>
+<h1 class="font-h1 text-h1 text-on-surface">Personel Profili</h1>
+<p class="font-body-base text-body-base text-on-surface-variant mt-1">Sistem erişimi ve operasyonel kayıtlar</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Sistem Bağlantısı Aktif</span>
+</div>
+</div>
+<!-- Bento Grid Layout for Profile Information -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Identity Card (Spans 4 columns) -->
+<div class="lg:col-span-4 bg-surface-container rounded-lg border border-outline-variant p-lg flex flex-col relative overflow-hidden">
+<!-- Subtle background texture indication -->
+<div class="absolute inset-0 bg-gradient-to-br from-primary-container/5 to-transparent pointer-events-none"></div>
+<div class="relative z-10 flex flex-col items-center text-center">
+<!-- Avatar -->
+<div class="w-32 h-32 rounded-full border-2 border-outline-variant p-1 mb-4 relative">
+<img alt="Dr. Aurora Explorer Profil Fotoğrafı" class="w-full h-full rounded-full object-cover" data-alt="A hyper-realistic, highly detailed portrait of a female polar research scientist named Dr. Aurora Explorer. She is wearing high-tech, insulated cold-weather gear with subtle glowing blue accents indicating active thermal regulation. The lighting is cool, clinical, and moody, reflecting a high-stakes operational environment inside a futuristic mission control station. The background is slightly blurred but suggests heavy machinery and digital readouts. The overall aesthetic is cinematic, modern, and conveys professional calm and technical confidence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPJT_6rWGcEC-Uy95XhlX78WAtXI39A54fjpX-Q97p7oR0F3xmKcpdG3ilnAFVVdNmPtUAESymv9LHb8sOjKMbZY24uLtoknOzyZeetWkom2sn8ds60Mge5U1kxF_SY0rdYC3_EFilR0H_XXoyib1gsdOqZnFKdVYLbQyZ1BmK7Im343fnH9pecNl-chTiN15QurhAeNwNnZvbsk2F4NM_LDop7fMFUHCH7Sb_eUzWNvtxKmqRoAPMOWhepY7U-GUNuxeaNsm5LKPi"/>
+<!-- Status indicator on avatar -->
+<div class="absolute bottom-1 right-1 w-6 h-6 bg-surface-container rounded-full flex items-center justify-center">
+<div class="w-4 h-4 rounded-full bg-emerald-500 border-2 border-surface-container"></div>
+</div>
+</div>
+<h2 class="font-h2 text-h2 text-on-surface mb-1">Dr. Aurora Explorer</h2>
+<!-- Role Badge -->
+<div class="inline-flex items-center gap-1.5 bg-primary-container/10 text-primary border border-primary-container/30 px-3 py-1 rounded-full font-label-caps text-label-caps mt-2">
+<span class="material-symbols-outlined text-[14px]">star</span>
+                                Görev Lideri (Mission Lead)
+                            </div>
+<div class="w-full border-t border-outline-variant my-6"></div>
+<!-- Vitals / Status (Aligned with brand operational precision) -->
+<div class="w-full space-y-4 text-left">
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Konum ID</span>
+<span class="font-data-mono text-data-mono text-on-surface">İSTASYON ALPHA</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Termal Durum</span>
+<span class="font-data-mono text-data-mono text-primary flex items-center gap-1">
+                                        Optimum <span class="material-symbols-outlined text-[16px]">thermostat</span>
+</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Erişim Seviyesi</span>
+<span class="font-data-mono text-data-mono text-on-surface">SEVİYE-5 (MAX)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column Group (Spans 8 columns) -->
+<div class="lg:col-span-8 flex flex-col gap-gutter">
+<!-- Activity Logs Card -->
+<div class="bg-surface-container rounded-lg border border-outline-variant p-md flex flex-col flex-1">
+<div class="flex items-center justify-between mb-md pb-sm border-b border-outline-variant">
+<h3 class="font-h3 text-h3 text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">history</span>
+                                    Operasyonel Kayıtlar
+                                </h3>
+<button class="font-body-sm text-body-sm text-primary hover:text-primary-fixed transition-colors">Tümünü İndir</button>
+</div>
+<!-- Data Table Style List -->
+<div class="flex flex-col space-y-1">
+<!-- Log Item 1 -->
+<div class="group flex items-start gap-4 p-3 rounded hover:bg-surface-container-highest transition-colors">
+<div class="w-8 h-8 rounded bg-primary-container/10 border border-primary-container/20 flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-primary text-[18px]">satellite_alt</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-body-base text-body-base text-on-surface truncate">Veri senkronizasyonu tamamlandı. Ana karargah ile bağlantı stabil.</p>
+<p class="font-data-mono text-body-sm text-on-surface-variant mt-1 opacity-70">MODÜL: İletişim Sistemleri</p>
+</div>
+<div class="font-data-mono text-body-sm text-on-surface-variant shrink-0 text-right">
+<div>[14:02:45Z]</div>
+<div class="text-[10px] opacity-50 mt-1">BUGÜN</div>
+</div>
+</div>
+<!-- Log Item 2 -->
+<div class="group flex items-start gap-4 p-3 rounded hover:bg-surface-container-highest transition-colors">
+<div class="w-8 h-8 rounded bg-surface-bright border border-outline-variant flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">settings_input_component</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-body-base text-body-base text-on-surface truncate">Sektör 7G dış alan termal sensör kalibrasyonu başlatıldı.</p>
+<p class="font-data-mono text-body-sm text-on-surface-variant mt-1 opacity-70">MODÜL: Çevre Kontrolü</p>
+</div>
+<div class="font-data-mono text-body-sm text-on-surface-variant shrink-0 text-right">
+<div>[11:15:22Z]</div>
+<div class="text-[10px] opacity-50 mt-1">BUGÜN</div>
+</div>
+</div>
+<!-- Log Item 3 -->
+<div class="group flex items-start gap-4 p-3 rounded hover:bg-surface-container-highest transition-colors">
+<div class="w-8 h-8 rounded bg-surface-bright border border-outline-variant flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">vpn_key</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-body-base text-body-base text-on-surface truncate">Güvenlik protokolü güncellendi. Sistem erişimi doğrulandı.</p>
+<p class="font-data-mono text-body-sm text-on-surface-variant mt-1 opacity-70">MODÜL: Kimlik Yönetimi</p>
+</div>
+<div class="font-data-mono text-body-sm text-on-surface-variant shrink-0 text-right">
+<div>[08:30:00Z]</div>
+<div class="text-[10px] opacity-50 mt-1">BUGÜN</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Settings & Security Horizontal Split -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Security Settings -->
+<div class="bg-surface-container rounded-lg border border-outline-variant p-md">
+<h3 class="font-h3 text-h3 text-on-surface mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">shield_lock</span>
+                                    Güvenlik Ayarları
+                                </h3>
+<div class="space-y-4">
+<!-- Toggle Item -->
+<div class="flex items-center justify-between">
+<div>
+<div class="font-body-base text-body-base text-on-surface">Biyometrik Doğrulama</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Sistem erişimi için gerekli</div>
+</div>
+<!-- Custom Toggle Switch -->
+<div class="w-10 h-6 bg-primary-container rounded-full relative cursor-pointer flex items-center shrink-0">
+<div class="w-4 h-4 bg-white rounded-full absolute right-1 shadow-sm"></div>
+</div>
+</div>
+<div class="w-full border-t border-outline-variant"></div>
+<!-- Link Item -->
+<button class="w-full flex items-center justify-between text-left group">
+<div>
+<div class="font-body-base text-body-base text-on-surface group-hover:text-primary transition-colors">Erişim Anahtarlarını Yönet</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">2 aktif cihaz</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Session Actions -->
+<div class="bg-surface-container rounded-lg border border-outline-variant p-md flex flex-col">
+<h3 class="font-h3 text-h3 text-on-surface mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant">power_settings_new</span>
+                                    Oturum Yönetimi
+                                </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">Mevcut konsol bağlantısını sonlandırarak sistemi uyku moduna alır.</p>
+<!-- Primary Action Buttons mapped to styling guidance -->
+<div class="mt-auto flex flex-col gap-3">
+<button class="w-full h-touch-target flex items-center justify-center gap-2 bg-transparent border border-outline-variant text-on-surface rounded hover:bg-surface-bright transition-colors font-medium">
+<span class="material-symbols-outlined text-[20px]">lock_clock</span>
+                                        Ekranı Kilitle
+                                    </button>
+<button class="w-full h-touch-target flex items-center justify-center gap-2 bg-error-container/10 border border-error-container text-error rounded hover:bg-error-container/20 transition-colors font-medium">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+                                        Oturumu Kapat
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

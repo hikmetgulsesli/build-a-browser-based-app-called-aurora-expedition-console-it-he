@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aurora Console - Ana Ekran</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-highest": "#32343d",
+                      "surface": "#11131b",
+                      "secondary-fixed-dim": "#b9c7df",
+                      "on-tertiary-container": "#ffede6",
+                      "surface-container": "#1d1f27",
+                      "surface-tint": "#b4c5ff",
+                      "surface-container-low": "#191b23",
+                      "surface-container-high": "#282a32",
+                      "primary-container": "#2563eb",
+                      "tertiary-fixed-dim": "#ffb596",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "tertiary-fixed": "#ffdbcd",
+                      "surface-bright": "#373942",
+                      "outline-variant": "#434655",
+                      "secondary-fixed": "#d5e3fc",
+                      "surface-dim": "#11131b",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "on-surface-variant": "#c3c6d7",
+                      "primary": "#b4c5ff",
+                      "on-secondary": "#233144",
+                      "on-error": "#690005",
+                      "secondary-container": "#3c4a5e",
+                      "on-tertiary": "#581e00",
+                      "on-error-container": "#ffdad6",
+                      "on-tertiary-fixed-variant": "#7d2d00",
+                      "inverse-primary": "#0053db",
+                      "on-secondary-container": "#abb9d1",
+                      "tertiary": "#ffb596",
+                      "inverse-on-surface": "#2e3039",
+                      "error-container": "#93000a",
+                      "on-tertiary-fixed": "#360f00",
+                      "secondary": "#b9c7df",
+                      "on-primary-container": "#eeefff",
+                      "on-secondary-fixed-variant": "#3a485b",
+                      "surface-variant": "#32343d",
+                      "primary-fixed": "#dbe1ff",
+                      "on-primary-fixed": "#00174b",
+                      "on-background": "#e1e2ed",
+                      "tertiary-container": "#bc4800",
+                      "background": "#11131b",
+                      "outline": "#8d90a0",
+                      "inverse-surface": "#e1e2ed",
+                      "surface-container-lowest": "#0c0e16",
+                      "on-secondary-fixed": "#0d1c2e",
+                      "on-primary": "#002a78",
+                      "on-surface": "#e1e2ed",
+                      "error": "#ffb4ab"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "32px",
+                      "touch-target": "44px",
+                      "gutter": "16px",
+                      "margin": "24px",
+                      "lg": "24px",
+                      "sm": "8px",
+                      "md": "16px",
+                      "base": "4px",
+                      "xs": "4px"
+              },
+              "fontFamily": {
+                      "body-sm": ["Inter", "sans-serif"],
+                      "data-mono": ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
+                      "h3": ["Inter", "sans-serif"],
+                      "body-base": ["Inter", "sans-serif"],
+                      "h1": ["Inter", "sans-serif"],
+                      "label-caps": ["Inter", "sans-serif"],
+                      "h2": ["Inter", "sans-serif"]
+              },
+              "fontSize": {
+                      "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                      "data-mono": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                      "h3": ["16px", {"lineHeight": "20px", "fontWeight": "600"}],
+                      "body-base": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "h1": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                      "label-caps": ["11px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                      "h2": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex overflow-hidden">
+<!-- SideNavBar (Shared Component) -->
+<aside class="fixed left-0 top-0 h-full w-64 border-r border-slate-800 bg-slate-900 flex flex-col py-6 font-inter antialiased text-sm tracking-tight z-50">
+<div class="px-6 mb-8">
+<div class="text-lg font-bold tracking-wider text-slate-100 uppercase">Aurora Console</div>
+<div class="text-slate-400 text-xs mt-1 uppercase tracking-widest font-semibold">Mission Control</div>
+</div>
+<nav class="flex-1 flex flex-col gap-1">
+<!-- Active Tab: Ana Ekran -->
+<a class="flex items-center gap-3 px-4 py-3 text-blue-400 bg-slate-800/50 border-r-2 border-blue-500 active:scale-[0.98] transition-transform duration-150 hover:bg-slate-800/50 hover:text-white" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-medium">Ana Ekran</span>
+</a>
+<!-- Inactive Tab: İstatistikler -->
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-100 hover:bg-slate-800/30 transition-colors active:scale-[0.98] duration-150" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="font-medium">İstatistikler</span>
+</a>
+<!-- Inactive Tab: Ayarlar -->
+<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-100 hover:bg-slate-800/30 transition-colors active:scale-[0.98] duration-150" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-medium">Ayarlar</span>
+</a>
+</nav>
+<div class="px-4 mt-auto">
+<button class="w-full bg-blue-600 hover:bg-blue-500 text-white h-touch-target rounded-md font-medium transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                Yeni Görev Ekle
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-1 ml-64 flex flex-col min-w-0 h-screen">
+<!-- TopAppBar (Shared Component) -->
+<header class="docked full-width top-0 sticky z-40 bg-slate-950/80 backdrop-blur-md border-b border-slate-800 flex justify-between items-center w-full px-6 py-4 font-inter text-sm font-medium">
+<div class="text-xl font-black text-slate-100 tracking-tight">Aurora Expedition Console</div>
+<div class="flex items-center gap-6">
+<!-- Search Bar on right -->
+<div class="relative hidden lg:block w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-[18px]">search</span>
+<input class="w-full bg-slate-900 border border-slate-700 rounded-md py-2 pl-10 pr-4 text-slate-300 placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-sm transition-colors h-[36px]" placeholder="Görev veya personel ara..." type="text"/>
+</div>
+<div class="flex items-center gap-2 border-l border-slate-800 pl-6">
+<button class="text-slate-400 hover:text-blue-400 transition-colors cursor-pointer active:opacity-80 p-2 rounded-full hover:bg-slate-800">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-slate-400 hover:text-blue-400 transition-colors cursor-pointer active:opacity-80 p-2 rounded-full hover:bg-slate-800">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Canvas (Design System Driven) -->
+<main class="flex-1 overflow-y-auto p-margin bg-background">
+<!-- Operational Alert Banner -->
+<div class="w-full bg-secondary-container/30 border border-secondary/20 rounded-lg p-md mb-margin flex items-start gap-md">
+<span class="material-symbols-outlined text-secondary mt-0.5">severe_cold</span>
+<div>
+<h4 class="font-h3 text-h3 text-on-surface">Sektör 7'de Düşük Görüş Uyarısı</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-sm">Tüm aktif saha ekiplerinin termal ekipman protokollerine uyması ve telemetri verilerini saatlik olarak güncellemesi gerekmektedir.</p>
+</div>
+</div>
+<!-- Dashboard Header & Filters -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-md mb-margin">
+<div>
+<h1 class="font-h1 text-h1 text-on-surface">Görev Panosu</h1>
+<p class="font-body-base text-body-base text-on-surface-variant mt-xs">Güncel kutup operasyonları ve telemetri durumları.</p>
+</div>
+<div class="flex flex-wrap items-center gap-sm">
+<button class="h-[36px] px-md rounded-DEFAULT bg-surface-container-high border-border-outline-variant text-on-surface font-body-sm text-body-sm hover:bg-surface-bright transition-colors border border-outline/30 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                        Tümü
+                    </button>
+<button class="h-[36px] px-md rounded-DEFAULT bg-surface border-border-outline text-on-surface-variant font-body-sm text-body-sm hover:bg-surface-container transition-colors border border-outline/30 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-surface-variant"></span>
+                        Planlanan
+                    </button>
+<button class="h-[36px] px-md rounded-DEFAULT bg-surface border-border-outline text-on-surface-variant font-body-sm text-body-sm hover:bg-surface-container transition-colors border border-outline/30 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                        Devam Eden
+                    </button>
+<button class="h-[36px] px-md rounded-DEFAULT bg-surface border-border-outline text-on-surface-variant font-body-sm text-body-sm hover:bg-surface-container transition-colors border border-outline/30 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+                        Tamamlanan
+                    </button>
+</div>
+</div>
+<!-- Mission Cards Grid (Bento Style approach) -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-gutter">
+<!-- Active Mission Card (Large/Featured) -->
+<div class="xl:col-span-2 bg-surface-container-high rounded-lg border border-outline-variant overflow-hidden flex flex-col relative">
+<!-- Map Underlay effect -->
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900 via-background to-background pointer-events-none"></div>
+<div class="p-md border-b border-outline-variant/50 flex justify-between items-center relative z-10 bg-surface-container-highest/50 backdrop-blur-sm">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary text-[28px]" style="font-variation-settings: 'FILL' 1;">explore</span>
+<div>
+<h2 class="font-h2 text-h2 text-on-surface">Operasyon: Buzkıran Alpha</h2>
+<p class="font-data-mono text-data-mono text-on-surface-variant text-[12px] mt-1">LAT: 78°13'N | LNG: 15°33'E</p>
+</div>
+</div>
+<div class="h-[24px] px-sm bg-primary/20 text-primary rounded flex items-center justify-center font-label-caps text-label-caps border border-primary/30">
+                            DEVAM EDEN
+                        </div>
+</div>
+<div class="p-md flex-1 grid grid-cols-1 md:grid-cols-2 gap-gutter relative z-10">
+<!-- Vitals -->
+<div class="bg-surface-container rounded p-md border border-outline/10">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-md">Takım Durumu</h3>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-bright flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface text-[16px]">person</span>
+</div>
+<div>
+<div class="font-body-sm text-body-sm text-on-surface">Dr. Aris Thorne</div>
+<div class="font-data-mono text-data-mono text-on-surface-variant text-[11px]">Lider / Jeolog</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[18px]">favorite</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-bright flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface text-[16px]">person</span>
+</div>
+<div>
+<div class="font-body-sm text-body-sm text-on-surface">Cmdr. Vael</div>
+<div class="font-data-mono text-data-mono text-on-surface-variant text-[11px]">Navigasyon</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[18px]">favorite</span>
+</div>
+</div>
+</div>
+<!-- Environment -->
+<div class="bg-surface-container rounded p-md border border-outline/10 flex flex-col justify-between">
+<div>
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-md">Ortam Metrikleri</h3>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<div class="font-data-mono text-data-mono text-on-surface text-lg">-34°C</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Dış Sıcaklık</div>
+</div>
+<div>
+<div class="font-data-mono text-data-mono text-on-surface text-lg">45 km/s</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Rüzgar (K)</div>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-outline/10 flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">ac_unit</span>
+<div class="font-body-sm text-body-sm text-secondary">Ağır kar yağışı bekleniyor (2s)</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Upcoming Mission Card -->
+<div class="bg-surface-container-high rounded-lg border border-outline-variant p-md flex flex-col hover:border-outline transition-colors">
+<div class="flex justify-between items-start mb-md">
+<div class="h-[24px] px-sm bg-surface-bright text-on-surface rounded flex items-center justify-center font-label-caps text-label-caps border border-outline/30">
+                            PLANLANAN
+                        </div>
+<button class="text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<h2 class="font-h3 text-h3 text-on-surface mb-xs">Keşif: Sektör 9</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-md flex-1">Buzul altı sismik aktivite ölçümü ve ekipman kurulumu.</p>
+<div class="space-y-3 mt-auto">
+<div class="flex items-center justify-between text-sm border-b border-outline/10 pb-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Başlangıç:</span>
+<span class="font-data-mono text-data-mono text-on-surface">14:00Z | T-04:30</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">group</span> Ekip:
+                            </span>
+<span class="font-data-mono text-data-mono text-on-surface">4 Personel</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">inventory</span> Ekipman:
+                            </span>
+<span class="font-data-mono text-data-mono text-secondary">Hazırlanıyor</span>
+</div>
+</div>
+<button class="w-full mt-md bg-surface-container text-on-surface border border-outline-variant h-[36px] rounded font-body-sm text-body-sm hover:bg-surface-bright transition-colors">
+                        Detayları İncele
+                    </button>
+</div>
+<!-- Another Active Mission Card (Compact) -->
+<div class="bg-surface-container-high rounded-lg border border-outline-variant p-md flex flex-col">
+<div class="flex justify-between items-start mb-md">
+<div class="h-[24px] px-sm bg-tertiary/20 text-tertiary rounded flex items-center justify-center font-label-caps text-label-caps border border-tertiary/30">
+                            BEKLEMEDE
+                        </div>
+<span class="material-symbols-outlined text-tertiary">warning</span>
+</div>
+<h2 class="font-h3 text-h3 text-on-surface mb-xs">İkmal Önceliği: Tesis B</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-md flex-1">Hava muhalefeti nedeniyle uçuş askıya alındı. Termal pencere bekleniyor.</p>
+<div class="bg-surface-container rounded p-sm border border-outline/10 mb-md">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-outline text-[16px]">schedule</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Tahmini Gecikme</span>
+</div>
+<div class="font-data-mono text-data-mono text-on-surface text-lg">08:45:00</div>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Pencere:</span>
+<div class="flex items-center gap-1 text-on-surface">
+<span class="material-symbols-outlined text-[16px]">cloud_off</span>
+<span class="font-data-mono text-data-mono">18:00Z</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

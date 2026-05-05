@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aurora Console - Görev Detayı</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#32343d",
+                    "surface": "#11131b",
+                    "secondary-fixed-dim": "#b9c7df",
+                    "on-tertiary-container": "#ffede6",
+                    "surface-container": "#1d1f27",
+                    "surface-tint": "#b4c5ff",
+                    "surface-container-low": "#191b23",
+                    "surface-container-high": "#282a32",
+                    "primary-container": "#2563eb",
+                    "tertiary-fixed-dim": "#ffb596",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "tertiary-fixed": "#ffdbcd",
+                    "surface-bright": "#373942",
+                    "outline-variant": "#434655",
+                    "secondary-fixed": "#d5e3fc",
+                    "surface-dim": "#11131b",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "on-surface-variant": "#c3c6d7",
+                    "primary": "#b4c5ff",
+                    "on-secondary": "#233144",
+                    "on-error": "#690005",
+                    "secondary-container": "#3c4a5e",
+                    "on-tertiary": "#581e00",
+                    "on-error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#7d2d00",
+                    "inverse-primary": "#0053db",
+                    "on-secondary-container": "#abb9d1",
+                    "tertiary": "#ffb596",
+                    "inverse-on-surface": "#2e3039",
+                    "error-container": "#93000a",
+                    "on-tertiary-fixed": "#360f00",
+                    "secondary": "#b9c7df",
+                    "on-primary-container": "#eeefff",
+                    "on-secondary-fixed-variant": "#3a485b",
+                    "surface-variant": "#32343d",
+                    "primary-fixed": "#dbe1ff",
+                    "on-primary-fixed": "#00174b",
+                    "on-background": "#e1e2ed",
+                    "tertiary-container": "#bc4800",
+                    "background": "#11131b",
+                    "outline": "#8d90a0",
+                    "inverse-surface": "#e1e2ed",
+                    "surface-container-lowest": "#0c0e16",
+                    "on-secondary-fixed": "#0d1c2e",
+                    "on-primary": "#002a78",
+                    "on-surface": "#e1e2ed",
+                    "error": "#ffb4ab"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "32px",
+                    "touch-target": "44px",
+                    "gutter": "16px",
+                    "margin": "24px",
+                    "lg": "24px",
+                    "sm": "8px",
+                    "md": "16px",
+                    "base": "4px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "body-sm": [
+                            "Inter"
+                    ],
+                    "data-mono": [
+                            "ui-monospace, SFMono-Regular, Menlo, monospace"
+                    ],
+                    "h3": [
+                            "Inter"
+                    ],
+                    "body-base": [
+                            "Inter"
+                    ],
+                    "h1": [
+                            "Inter"
+                    ],
+                    "label-caps": [
+                            "Inter"
+                    ],
+                    "h2": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "body-sm": [
+                            "13px",
+                            {
+                                    "lineHeight": "18px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "data-mono": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "h3": [
+                            "16px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-base": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "h1": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-caps": [
+                            "11px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "h2": [
+                            "18px",
+                            {
+                                    "lineHeight": "24px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-base flex min-h-screen">
+<!-- Navigation Shell suppressed for Task-Focused sub-page (Mission Detail implies 'Back' navigation) -->
+<!-- Top App Bar for Detay Screen -->
+<header class="fixed top-0 left-0 w-full z-40 bg-surface-container-high/80 backdrop-blur-md border-b border-surface-container-highest">
+<div class="flex items-center justify-between px-6 py-4">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-variant transition-colors text-on-surface">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<div>
+<h1 class="font-h1 text-h1 text-on-surface">Operasyon Kış Fırtınası</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">ID: AX-9942 • Sektör: 4B Kuzey</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-4 h-touch-target rounded bg-surface border border-outline-variant hover:bg-surface-variant text-on-surface transition-colors font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+                    Düzenle
+                </button>
+<button class="flex items-center gap-2 px-4 h-touch-target rounded bg-surface border border-outline-variant hover:bg-surface-variant text-on-surface transition-colors font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px]">share</span>
+                    Paylaş
+                </button>
+<button class="flex items-center gap-2 px-4 h-touch-target rounded bg-surface border border-outline-variant hover:bg-surface-variant text-on-surface transition-colors font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+                    Arşivle
+                </button>
+<button class="flex items-center gap-2 px-6 h-touch-target rounded bg-primary-container hover:bg-blue-700 text-on-primary-container transition-colors font-h3 text-h3 ml-2 focus:ring-2 focus:ring-primary-container focus:outline-none">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                    BAŞLAT
+                </button>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 mt-[88px] p-margin max-w-[1600px] mx-auto w-full">
+<!-- Status & Alert Row -->
+<div class="flex items-center justify-between mb-margin bg-surface-container rounded-lg p-md border border-surface-container-highest">
+<div class="flex items-center gap-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-tertiary-container/20 text-tertiary font-label-caps text-label-caps border border-tertiary/30">
+                    BEKLEMEDE
+                </span>
+<span class="font-data-mono text-data-mono text-on-surface-variant">
+                    Tahmini Başlangıç: T-04:22:10
+                </span>
+</div>
+<div class="flex items-center gap-2 text-error">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">warning</span>
+<span class="font-body-sm text-body-sm font-semibold">Risk: Yüksek (Sıcaklık Düşüşü Uyarısı)</span>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Left Column: Briefing & Crew (4 cols) -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-gutter">
+<!-- Briefing Card -->
+<div class="bg-surface-container rounded-lg p-lg border border-surface-container-highest flex-1">
+<h2 class="font-h2 text-h2 text-on-surface mb-md flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">description</span>
+                        Görev Özeti
+                    </h2>
+<p class="font-body-base text-body-base text-on-surface-variant mb-6">
+                        Sektör 4B'deki otomatik meteoroloji istasyonunun (İstasyon-Delta) sensör kalibrasyonu ve batarya değişimi. Yaklaşan Kategori 3 fırtına öncesi tamamlanması kritiktir. Tahmini dış mekan maruziyet süresi: 45 dakika.
+                    </p>
+<div class="grid grid-cols-2 gap-4 border-t border-surface-container-highest pt-4">
+<div>
+<span class="block font-label-caps text-label-caps text-outline mb-1">HEDEF KOORDİNATLAR</span>
+<span class="font-data-mono text-data-mono text-on-surface">82° 10' G, 15° 30' D</span>
+</div>
+<div>
+<span class="block font-label-caps text-label-caps text-outline mb-1">EKİPMAN YÜKÜ</span>
+<span class="font-body-sm text-body-sm text-on-surface">14 kg (Ağır Kit)</span>
+</div>
+<div>
+<span class="block font-label-caps text-label-caps text-outline mb-1">ARAÇ TİPİ</span>
+<span class="font-body-sm text-body-sm text-on-surface">Snowcat M2</span>
+</div>
+<div>
+<span class="block font-label-caps text-label-caps text-outline mb-1">İLETİŞİM PROTOKOLÜ</span>
+<span class="font-body-sm text-body-sm text-on-surface">Kanal 4 (Şifreli)</span>
+</div>
+</div>
+</div>
+<!-- Crew List Card -->
+<div class="bg-surface-container rounded-lg p-lg border border-surface-container-highest">
+<div class="flex items-center justify-between mb-md">
+<h2 class="font-h2 text-h2 text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">group</span>
+                            Saha Ekibi
+                        </h2>
+<span class="font-body-sm text-body-sm text-outline">3 Personel</span>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 p-3 rounded bg-surface border border-surface-container-highest">
+<img alt="Dr. Elif Yılmaz" class="w-10 h-10 rounded-full border border-outline-variant" data-alt="A professional headshot of a polar researcher in dark winter gear against a stark technical background. High-contrast, modern corporate style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAydkVHlrKH4owYGq3PoCdI3CbopGbiVJOUeqChqG4x9H32TXDqOp0qG5SfKip3TCgEtq3QxTG6zRg5lsT_bZAiKw-fcoAoMWNLNhhcvQ5S6GykuEh2y8jHPcuxb4bvE_6hlMpzjzvgk-ZUVZUuEJrLq0_q7EW7ZywJwDla7-76VOc2auAahfSitIWBXSuQNU26-zI-AbLTDrEa-OO7JBFLUoFQ1Wjtl9W9vRY2oMKLBaWr-NH5s3zTpZVBPQC9fOkEAfLCkRmSGmGQ"/>
+<div class="flex-1">
+<h3 class="font-h3 text-h3 text-on-surface">Dr. Elif Yılmaz</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Görev Komutanı</p>
+</div>
+<span class="material-symbols-outlined text-primary" title="Tıbbi Onaylı">medical_services</span>
+</div>
+<div class="flex items-center gap-3 p-3 rounded bg-surface border border-surface-container-highest">
+<img alt="Kaan Demir" class="w-10 h-10 rounded-full border border-outline-variant" data-alt="A professional headshot of a rugged field technician in heavy parka gear. Dark background, dramatic lighting, serious mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmt3ZeURTkWB5-ItpeiIXT7Tehj1lWfph5Lygmy4Esuer2-OzuAKZxAD04SYhnuJ-WE-umau8ccJJxoOHnH5tWceWKqUqKMn_DgO2VNspj0h9sgYkVeKIqvthul0vhKuVDtexozIKpDEl9oDMbz7VdzOk3afc3BcDpHLOxdy07sM7tQ3bWYynGFS6plXf_MSfYmutZEZH_KpxDiaQQ6ZqMHxbc7NdN2ldKOdGAwQjUiiGoaISyKCO1rj02MOZBSWr1WYCFqj0QfZUx"/>
+<div class="flex-1">
+<h3 class="font-h3 text-h3 text-on-surface">Kaan Demir</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sistem Mühendisi</p>
+</div>
+<span class="material-symbols-outlined text-outline" title="Tıbbi Onay Bekliyor">pending</span>
+</div>
+<div class="flex items-center gap-3 p-3 rounded bg-surface border border-surface-container-highest">
+<img alt="Ayşe Kaya" class="w-10 h-10 rounded-full border border-outline-variant" data-alt="A professional headshot of an environmental scientist wearing a heavy dark jacket. Neutral expression, stark lighting, technical aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWMNxXMm3xK5ZxMXcezShovAFatXCtUDkkorzVW1XQodP8_rSsvDsC6JW7clSEVItgtvmFuh2eDaCUMDZ4g7hjqqYAh_jdS2r3L-YDdtAk9PF3kTEAYILDWyOLpI48Ornv8uORDvXok6kJuQ1NTygzGX3u0iaXt7XxhnMO3OmgmpFhYSHvcqEL0ri6ejj-9lOQqnTGOYEVAlWny_tUtd3RsZLf976IlGvhQFfhWytkDFDMoQK2qox2csFVs-euDhD6Hp-jET5eD1Q1"/>
+<div class="flex-1">
+<h3 class="font-h3 text-h3 text-on-surface">Ayşe Kaya</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Navigasyon &amp; İletişim</p>
+</div>
+<span class="material-symbols-outlined text-primary" title="Tıbbi Onaylı">medical_services</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Center Column: Map (8 cols) -->
+<div class="col-span-12 lg:col-span-8 flex flex-col gap-gutter">
+<!-- High-Res Map Placeholder -->
+<div class="bg-surface-container rounded-lg border border-surface-container-highest relative overflow-hidden h-[400px]">
+<div class="absolute inset-0 bg-surface-container-low opacity-80 z-10" style="background-image: radial-gradient(#334155 1px, transparent 1px); background-size: 20px 20px;"></div>
+<img alt="Polar Map" class="absolute inset-0 w-full h-full object-cover mix-blend-luminosity opacity-40" data-alt="A high-altitude, technical satellite map view of a frozen polar landscape. Deep dark blue and slate tones dominate the terrain. Grid lines and topographic contours are subtly visible. The overall mood is cold, analytical, and highly operational, fitting a modern mission control interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTfbnnydwDK5tgapScM5-iVytlUPrb5By0LskJY7sgvcQFg_N9k9o5ZLL_dAbq4joNnVJF7t3Iuwzu3dc1QSjfMeBg2ihiWgl2xpcy09rK7d7NxWmn9aMFTYYA1ibrw8lmtZmBU_hqoTG3ykNUe8KwgpkqVYvRHivhWMKzZaxU-wZ-Uu9MhT63T26ZySN1kIAM1cIP8qyF2ZArHetuBxumYj_bIE7CAhHSlhXIMrTw64bKzot1qZMW5Ee49qXLASO4K4E8kad5Tq9z"/>
+<!-- Map Controls Overlay -->
+<div class="absolute top-4 right-4 z-20 flex flex-col gap-2">
+<button class="w-10 h-10 bg-surface-container-high/80 backdrop-blur-md border border-outline-variant rounded flex items-center justify-center text-on-surface hover:bg-surface-variant">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="w-10 h-10 bg-surface-container-high/80 backdrop-blur-md border border-outline-variant rounded flex items-center justify-center text-on-surface hover:bg-surface-variant">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<button class="w-10 h-10 bg-surface-container-high/80 backdrop-blur-md border border-outline-variant rounded flex items-center justify-center text-on-surface hover:bg-surface-variant mt-4">
+<span class="material-symbols-outlined">my_location</span>
+</button>
+</div>
+<!-- Map Overlay Data Panel -->
+<div class="absolute bottom-4 left-4 z-20 bg-surface-container-high/90 backdrop-blur-md border border-outline-variant rounded p-4 min-w-[250px]">
+<h4 class="font-label-caps text-label-caps text-outline mb-2">GÜNCEL KONUM VERİSİ</h4>
+<div class="flex justify-between items-center mb-1">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Rakım:</span>
+<span class="font-data-mono text-data-mono text-on-surface">1,240 m</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Buz Kalınlığı:</span>
+<span class="font-data-mono text-data-mono text-on-surface">3.2 m</span>
+</div>
+</div>
+</div>
+<!-- Telemetry & Weather Panel -->
+<div class="bg-surface-container rounded-lg p-lg border border-surface-container-highest flex-1">
+<h2 class="font-h2 text-h2 text-on-surface mb-md flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">monitoring</span>
+                        Hava Durumu Telemetrisi
+                    </h2>
+<div class="grid grid-cols-3 gap-4 mb-6">
+<div class="p-4 rounded bg-surface border border-surface-container-highest">
+<span class="block font-label-caps text-label-caps text-outline mb-2">DIŞ SICAKLIK</span>
+<div class="flex items-end gap-2 text-error">
+<span class="font-h1 text-h1">-42°C</span>
+<span class="material-symbols-outlined mb-1">arrow_downward</span>
+</div>
+</div>
+<div class="p-4 rounded bg-surface border border-surface-container-highest">
+<span class="block font-label-caps text-label-caps text-outline mb-2">RÜZGAR HIZI</span>
+<div class="flex items-end gap-2 text-tertiary">
+<span class="font-h1 text-h1">65 km/s</span>
+<span class="material-symbols-outlined mb-1">air</span>
+</div>
+</div>
+<div class="p-4 rounded bg-surface border border-surface-container-highest">
+<span class="block font-label-caps text-label-caps text-outline mb-2">GÖRÜŞ MESAFESİ</span>
+<div class="flex items-end gap-2 text-primary">
+<span class="font-h1 text-h1">2.4 km</span>
+<span class="material-symbols-outlined mb-1">visibility_off</span>
+</div>
+</div>
+</div>
+<!-- Faux Graph Area -->
+<div class="h-32 w-full border-t border-surface-container-highest relative pt-4">
+<span class="absolute top-2 left-0 font-label-caps text-label-caps text-outline">24 SAATLİK SICAKLIK TAHMİNİ</span>
+<div class="w-full h-full flex items-end gap-1 opacity-60">
+<!-- Simulated bars -->
+<div class="w-full bg-primary/20 h-[80%] rounded-t"></div>
+<div class="w-full bg-primary/30 h-[70%] rounded-t"></div>
+<div class="w-full bg-primary/40 h-[65%] rounded-t"></div>
+<div class="w-full bg-primary/50 h-[60%] rounded-t"></div>
+<div class="w-full bg-primary/60 h-[50%] rounded-t"></div>
+<div class="w-full bg-tertiary/60 h-[45%] rounded-t"></div>
+<div class="w-full bg-error/60 h-[30%] rounded-t"></div>
+<div class="w-full bg-error/80 h-[20%] rounded-t"></div>
+<div class="w-full bg-error h-[10%] rounded-t"></div>
+<div class="w-full bg-error/80 h-[15%] rounded-t"></div>
+<div class="w-full bg-tertiary/60 h-[30%] rounded-t"></div>
+<div class="w-full bg-primary/40 h-[40%] rounded-t"></div>
+</div>
+<div class="flex justify-between w-full mt-2 font-data-mono text-[10px] text-outline">
+<span>Şimdi</span>
+<span>+6s</span>
+<span>+12s</span>
+<span>+24s</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

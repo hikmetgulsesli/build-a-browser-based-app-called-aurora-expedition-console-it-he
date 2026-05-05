@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hata - Veri Yüklenemedi</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#32343d",
+                        "surface": "#11131b",
+                        "secondary-fixed-dim": "#b9c7df",
+                        "on-tertiary-container": "#ffede6",
+                        "surface-container": "#1d1f27",
+                        "surface-tint": "#b4c5ff",
+                        "surface-container-low": "#191b23",
+                        "surface-container-high": "#282a32",
+                        "primary-container": "#2563eb",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "tertiary-fixed": "#ffdbcd",
+                        "surface-bright": "#373942",
+                        "outline-variant": "#434655",
+                        "secondary-fixed": "#d5e3fc",
+                        "surface-dim": "#11131b",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-surface-variant": "#c3c6d7",
+                        "primary": "#b4c5ff",
+                        "on-secondary": "#233144",
+                        "on-error": "#690005",
+                        "secondary-container": "#3c4a5e",
+                        "on-tertiary": "#581e00",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "inverse-primary": "#0053db",
+                        "on-secondary-container": "#abb9d1",
+                        "tertiary": "#ffb596",
+                        "inverse-on-surface": "#2e3039",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed": "#360f00",
+                        "secondary": "#b9c7df",
+                        "on-primary-container": "#eeefff",
+                        "on-secondary-fixed-variant": "#3a485b",
+                        "surface-variant": "#32343d",
+                        "primary-fixed": "#dbe1ff",
+                        "on-primary-fixed": "#00174b",
+                        "on-background": "#e1e2ed",
+                        "tertiary-container": "#bc4800",
+                        "background": "#11131b",
+                        "outline": "#8d90a0",
+                        "inverse-surface": "#e1e2ed",
+                        "surface-container-lowest": "#0c0e16",
+                        "on-secondary-fixed": "#0d1c2e",
+                        "on-primary": "#002a78",
+                        "on-surface": "#e1e2ed",
+                        "error": "#ffb4ab"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "xl": "32px",
+                        "touch-target": "44px",
+                        "gutter": "16px",
+                        "margin": "24px",
+                        "lg": "24px",
+                        "sm": "8px",
+                        "md": "16px",
+                        "base": "4px",
+                        "xs": "4px"
+                    },
+                    fontFamily: {
+                        "body-sm": ["Inter", "sans-serif"],
+                        "data-mono": ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
+                        "h3": ["Inter", "sans-serif"],
+                        "body-base": ["Inter", "sans-serif"],
+                        "h1": ["Inter", "sans-serif"],
+                        "label-caps": ["Inter", "sans-serif"],
+                        "h2": ["Inter", "sans-serif"]
+                    },
+                    fontSize: {
+                        "body-sm": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+                        "data-mono": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+                        "h3": ["16px", { lineHeight: "20px", fontWeight: "600" }],
+                        "body-base": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+                        "h1": ["24px", { lineHeight: "32px", letterSpacing: "-0.02em", fontWeight: "600" }],
+                        "label-caps": ["11px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "700" }],
+                        "h2": ["18px", { lineHeight: "24px", letterSpacing: "-0.01em", fontWeight: "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex items-center justify-center p-margin antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Error Card Container -->
+<main class="w-full max-w-[480px]">
+<!-- Ambient Glow behind card for subtle depth -->
+<div class="relative">
+<div aria-hidden="true" class="absolute -inset-0.5 bg-error/10 blur-xl rounded-xl"></div>
+<div class="relative bg-surface-container-high border border-outline-variant rounded-xl p-xl flex flex-col items-center text-center shadow-[0_4px_24px_rgba(0,0,0,0.15)]">
+<!-- Error Icon -->
+<div class="mb-margin h-20 w-20 rounded-full bg-error-container/20 flex items-center justify-center border border-error-container">
+<span class="material-symbols-outlined text-error text-[40px]" style="font-variation-settings: 'FILL' 1;">
+                        cloud_off
+                    </span>
+</div>
+<!-- Text Content -->
+<h1 class="font-h1 text-h1 text-on-surface mb-sm">
+                    Veri Yüklenemedi
+                </h1>
+<p class="font-body-base text-body-base text-on-surface-variant mb-xl max-w-[320px]">
+                    Lokal depolama erişiminde bir hata oluştu veya bağlantı kesildi.
+                </p>
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row gap-gutter w-full">
+<button class="flex-1 min-h-touch-target px-md py-sm rounded-lg border border-outline-variant bg-transparent text-on-surface font-body-base text-body-base hover:bg-surface-variant focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface-container-high transition-all" type="button">
+                        Verileri Temizle
+                    </button>
+<button class="flex-1 min-h-touch-target px-md py-sm rounded-lg border border-transparent bg-primary-container text-on-primary-container font-body-base text-body-base hover:bg-primary-container/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface-container-high transition-all flex items-center justify-center gap-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+                        Tekrar Dene
+                    </button>
+</div>
+<!-- System Status Indicator (Optional decorative element reinforcing operational precision) -->
+<div class="mt-lg pt-lg border-t border-outline-variant w-full flex items-center justify-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">terminal</span>
+<span class="font-data-mono text-data-mono text-[12px] opacity-70">ERR_STORAGE_FAULT_0x8B</span>
+</div>
+</div>
+</div>
+</main>
+</body></html>
