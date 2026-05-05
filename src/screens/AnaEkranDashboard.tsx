@@ -167,7 +167,7 @@ export function AnaEkranDashboard({
           const isLarge = idx === 0 && mission.status === 'aktif';
 
           return (
-            <div key={mission.id} className={`bg-surface-container-high rounded-lg border border-outline-variant overflow-hidden flex flex-col relative hover:border-outline transition-colors ${isLarge ? 'xl:col-span-2' : ''}`}>
+            <div key={mission.id} className={`bg-surface-container-high rounded-lg border border-outline-variant overflow-hidden flex flex-col relative hover:border-outline transition-colors ${isLarge ? 'xl:col-span-2' : ''}`} onClick={() => onMissionSelect(mission.id)} style={{cursor: 'pointer'}}>
               <div className={`p-md border-b border-outline-variant/50 flex justify-between items-center relative z-10 ${isLarge ? 'bg-surface-container-highest/50 backdrop-blur-sm' : ''}`}>
                 <div className="flex items-center gap-md">
                   <span className="material-symbols-outlined text-primary text-[28px]" style={{fontVariationSettings: "'FILL' 1"}}>explore</span>
@@ -250,7 +250,7 @@ export function AnaEkranDashboard({
                   </div>
                 )}
                 <div className="mt-auto">
-                  <button className="w-full bg-surface-container text-on-surface border border-outline-variant h-[36px] rounded font-body-sm text-body-sm hover:bg-surface-bright transition-colors cursor-pointer" onClick={() => onMissionSelect(mission.id)}>
+                  <button className="w-full bg-surface-container text-on-surface border border-outline-variant h-[36px] rounded font-body-sm text-body-sm hover:bg-surface-bright transition-colors cursor-pointer" onClick={(e) => { e.stopPropagation(); onMissionSelect(mission.id); }}>
                     Detayları İncele
                   </button>
                 </div>

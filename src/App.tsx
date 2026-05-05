@@ -88,13 +88,27 @@ export default function App() {
       )}
       {state.currentScreen === 'mission-new' && (
         <YeniGorevEkleDuzenle
-          mode="new"
+          mode={state.isEditing && currentMission ? 'edit' : 'new'}
+          mission={currentMission ?? undefined}
           teamMembers={state.teamMembers}
           equipmentPacks={state.equipmentPacks}
           weatherWindows={state.weatherWindows}
           routeCheckpoints={state.routeCheckpoints}
-          onSave={addMission}
-          onCancel={goBack}
+          onSave={(missionData) => {
+            if (state.isEditing && currentMission) {
+              updateMission(currentMission.id, missionData);
+              navigate('mission-detail', currentMission.id);
+            } else {
+              addMission(missionData);
+            }
+          }}
+          onCancel={() => {
+            if (state.isEditing && currentMission) {
+              navigate('mission-detail', currentMission.id);
+            } else {
+              goBack();
+            }
+          }}
           onNavigate={navigate}
         />
       )}
@@ -107,7 +121,7 @@ export default function App() {
           routeCheckpoints={state.routeCheckpoints}
           riskFlags={state.riskFlags}
           onBack={goBack}
-          onEdit={() => navigate('mission-new')}
+          onEdit={() => navigate('mission-new', currentMission.id)}
           onArchive={() => archiveMission(currentMission.id)}
           onDelete={() => {
             deleteMission(currentMission.id);
