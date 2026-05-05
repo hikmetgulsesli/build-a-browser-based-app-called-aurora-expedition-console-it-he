@@ -1,0 +1,1053 @@
+[
+  {
+    "screenId": "8fbfa8c44aa240bbbf7003407b357d54",
+    "screenTitle": "Sistem Hatası",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "Verileri Temizle",
+        "line": 133
+      },
+      {
+        "type": "button",
+        "label": "Tekrar Dene",
+        "line": 136
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "Verileri Temizle",
+        "line": 133
+      },
+      {
+        "type": "button",
+        "label": "Tekrar Dene",
+        "line": 136
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 2,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "799631347a654708bb55ea7e3cd2f101",
+    "screenTitle": "İstatistikler ve Analiz",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Ana Ekran",
+        "href": "#",
+        "line": 131
+      },
+      {
+        "type": "link",
+        "label": "İstatistikler",
+        "href": "#",
+        "line": 136
+      },
+      {
+        "type": "link",
+        "label": "Ayarlar",
+        "href": "#",
+        "line": 141
+      },
+      {
+        "type": "button",
+        "label": "Yeni Görev Ekle",
+        "line": 147
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 159
+      },
+      {
+        "type": "button",
+        "label": "account_circle",
+        "line": 162
+      },
+      {
+        "type": "button",
+        "label": "more_vert",
+        "line": 243
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 177
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 182
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Ana Ekran",
+        "href": "#",
+        "line": 131
+      },
+      {
+        "type": "link",
+        "label": "İstatistikler",
+        "href": "#",
+        "line": 136
+      },
+      {
+        "type": "link",
+        "label": "Ayarlar",
+        "href": "#",
+        "line": 141
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "Yeni Görev Ekle",
+        "line": 147
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 159
+      },
+      {
+        "type": "button",
+        "label": "account_circle",
+        "line": 162
+      },
+      {
+        "type": "button",
+        "label": "more_vert",
+        "line": 243
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 177
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 182
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 9,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "8c79c500f4e3481791d8c1c6d3b1ed99",
+    "screenTitle": "Henüz Veri Yok",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Ana Ekran",
+        "href": "#",
+        "line": 120
+      },
+      {
+        "type": "link",
+        "label": "İstatistikler",
+        "href": "#",
+        "line": 126
+      },
+      {
+        "type": "link",
+        "label": "Ayarlar",
+        "href": "#",
+        "line": 132
+      },
+      {
+        "type": "button",
+        "label": "Yeni Görev Ekle",
+        "line": 140
+      },
+      {
+        "type": "button",
+        "label": "menu",
+        "line": 151
+      },
+      {
+        "type": "button",
+        "label": "search",
+        "line": 157
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 160
+      },
+      {
+        "type": "button",
+        "label": "account_circle",
+        "line": 163
+      },
+      {
+        "type": "button",
+        "label": "İlk Görevi Oluştur",
+        "line": 187
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Ana Ekran",
+        "href": "#",
+        "line": 120
+      },
+      {
+        "type": "link",
+        "label": "İstatistikler",
+        "href": "#",
+        "line": 126
+      },
+      {
+        "type": "link",
+        "label": "Ayarlar",
+        "href": "#",
+        "line": 132
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "Yeni Görev Ekle",
+        "line": 140
+      },
+      {
+        "type": "button",
+        "label": "menu",
+        "line": 151
+      },
+      {
+        "type": "button",
+        "label": "search",
+        "line": 157
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 160
+      },
+      {
+        "type": "button",
+        "label": "account_circle",
+        "line": 163
+      },
+      {
+        "type": "button",
+        "label": "İlk Görevi Oluştur",
+        "line": 187
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 9,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "b012924ac7484da38770ec732ecfd3d3",
+    "screenTitle": "Sistem Ayarları",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Ana Ekran",
+        "href": "#",
+        "line": 118
+      },
+      {
+        "type": "link",
+        "label": "İstatistikler",
+        "href": "#",
+        "line": 122
+      },
+      {
+        "type": "link",
+        "label": "Ayarlar",
+        "href": "#",
+        "line": 126
+      },
+      {
+        "type": "button",
+        "label": "Yeni Görev Ekle",
+        "line": 132
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 143
+      },
+      {
+        "type": "button",
+        "label": "account_circle",
+        "line": 146
+      },
+      {
+        "type": "button",
+        "label": "Genel",
+        "line": 160
+      },
+      {
+        "type": "button",
+        "label": "Ekip Yönetimi",
+        "line": 163
+      },
+      {
+        "type": "button",
+        "label": "Donanım Kalibrasyonu",
+        "line": 166
+      },
+      {
+        "type": "button",
+        "label": "Veri Saklama",
+        "line": 169
+      },
+      {
+        "type": "button",
+        "label": "visibility",
+        "line": 205
+      },
+      {
+        "type": "button",
+        "label": "Değişiklikleri Kaydet",
+        "line": 213
+      },
+      {
+        "type": "input",
+        "label": "text",
+        "inputType": "text",
+        "line": 186
+      },
+      {
+        "type": "input",
+        "label": "text",
+        "inputType": "text",
+        "line": 190
+      },
+      {
+        "type": "input",
+        "label": "password",
+        "inputType": "password",
+        "line": 204
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Ana Ekran",
+        "href": "#",
+        "line": 118
+      },
+      {
+        "type": "link",
+        "label": "İstatistikler",
+        "href": "#",
+        "line": 122
+      },
+      {
+        "type": "link",
+        "label": "Ayarlar",
+        "href": "#",
+        "line": 126
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "Yeni Görev Ekle",
+        "line": 132
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 143
+      },
+      {
+        "type": "button",
+        "label": "account_circle",
+        "line": 146
+      },
+      {
+        "type": "button",
+        "label": "Genel",
+        "line": 160
+      },
+      {
+        "type": "button",
+        "label": "Ekip Yönetimi",
+        "line": 163
+      },
+      {
+        "type": "button",
+        "label": "Donanım Kalibrasyonu",
+        "line": 166
+      },
+      {
+        "type": "button",
+        "label": "Veri Saklama",
+        "line": 169
+      },
+      {
+        "type": "button",
+        "label": "visibility",
+        "line": 205
+      },
+      {
+        "type": "button",
+        "label": "Değişiklikleri Kaydet",
+        "line": 213
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "text",
+        "inputType": "text",
+        "line": 186
+      },
+      {
+        "type": "input",
+        "label": "text",
+        "inputType": "text",
+        "line": 190
+      },
+      {
+        "type": "input",
+        "label": "password",
+        "inputType": "password",
+        "line": 204
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 15,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "baea0a91d7ed4ca997d90112004f01ed",
+    "screenTitle": "Kullanıcı Profili",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Ana Ekran",
+        "href": "#",
+        "line": 135
+      },
+      {
+        "type": "link",
+        "label": "İstatistikler",
+        "href": "#",
+        "line": 140
+      },
+      {
+        "type": "link",
+        "label": "Ayarlar",
+        "href": "#",
+        "line": 146
+      },
+      {
+        "type": "button",
+        "label": "Yeni Görev Ekle",
+        "line": 153
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 181
+      },
+      {
+        "type": "button",
+        "label": "account_circle",
+        "line": 185
+      },
+      {
+        "type": "button",
+        "label": "Tümünü İndir",
+        "line": 256
+      },
+      {
+        "type": "button",
+        "label": "Erişim Anahtarlarını Yönet 2 aktif cihaz",
+        "line": 326
+      },
+      {
+        "type": "button",
+        "label": "Ekranı Kilitle",
+        "line": 344
+      },
+      {
+        "type": "button",
+        "label": "Oturumu Kapat",
+        "line": 348
+      },
+      {
+        "type": "input",
+        "label": "Sistemde ara...",
+        "inputType": "text",
+        "placeholder": "Sistemde ara...",
+        "line": 177
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Ana Ekran",
+        "href": "#",
+        "line": 135
+      },
+      {
+        "type": "link",
+        "label": "İstatistikler",
+        "href": "#",
+        "line": 140
+      },
+      {
+        "type": "link",
+        "label": "Ayarlar",
+        "href": "#",
+        "line": 146
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "Yeni Görev Ekle",
+        "line": 153
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 181
+      },
+      {
+        "type": "button",
+        "label": "account_circle",
+        "line": 185
+      },
+      {
+        "type": "button",
+        "label": "Tümünü İndir",
+        "line": 256
+      },
+      {
+        "type": "button",
+        "label": "Erişim Anahtarlarını Yönet 2 aktif cihaz",
+        "line": 326
+      },
+      {
+        "type": "button",
+        "label": "Ekranı Kilitle",
+        "line": 344
+      },
+      {
+        "type": "button",
+        "label": "Oturumu Kapat",
+        "line": 348
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "Sistemde ara...",
+        "inputType": "text",
+        "placeholder": "Sistemde ara...",
+        "line": 177
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 11,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "f6dd261f2deb4510b2ea8dacf4230f5d",
+    "screenTitle": "Yeni Görev Ekle / Düzenle",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "Geri Dön",
+        "line": 127
+      },
+      {
+        "type": "button",
+        "label": "Personel Ekle",
+        "line": 193
+      },
+      {
+        "type": "button",
+        "label": "Kaldır",
+        "line": 219
+      },
+      {
+        "type": "button",
+        "label": "Kaldır",
+        "line": 234
+      },
+      {
+        "type": "button",
+        "label": "NOKTA EKLE",
+        "line": 314
+      },
+      {
+        "type": "button",
+        "label": "add",
+        "line": 362
+      },
+      {
+        "type": "button",
+        "label": "remove",
+        "line": 365
+      },
+      {
+        "type": "button",
+        "label": "my_location",
+        "line": 368
+      },
+      {
+        "type": "button",
+        "label": "İptal",
+        "line": 380
+      },
+      {
+        "type": "button",
+        "label": "Görevi Kaydet",
+        "line": 383
+      },
+      {
+        "type": "input",
+        "label": "Örn: Kuzey Kutbu İkmal Hattı",
+        "inputType": "text",
+        "placeholder": "Örn: Kuzey Kutbu İkmal Hattı",
+        "line": 157
+      },
+      {
+        "type": "input",
+        "label": "date",
+        "inputType": "date",
+        "line": 167
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 174
+      },
+      {
+        "type": "input",
+        "label": "datetime-local",
+        "inputType": "datetime-local",
+        "line": 259
+      },
+      {
+        "type": "input",
+        "label": "datetime-local",
+        "inputType": "datetime-local",
+        "line": 263
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 279
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 286
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 293
+      },
+      {
+        "type": "form",
+        "label": "form",
+        "line": 145
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "Geri Dön",
+        "line": 127
+      },
+      {
+        "type": "button",
+        "label": "Personel Ekle",
+        "line": 193
+      },
+      {
+        "type": "button",
+        "label": "Kaldır",
+        "line": 219
+      },
+      {
+        "type": "button",
+        "label": "Kaldır",
+        "line": 234
+      },
+      {
+        "type": "button",
+        "label": "NOKTA EKLE",
+        "line": 314
+      },
+      {
+        "type": "button",
+        "label": "add",
+        "line": 362
+      },
+      {
+        "type": "button",
+        "label": "remove",
+        "line": 365
+      },
+      {
+        "type": "button",
+        "label": "my_location",
+        "line": 368
+      },
+      {
+        "type": "button",
+        "label": "İptal",
+        "line": 380
+      },
+      {
+        "type": "button",
+        "label": "Görevi Kaydet",
+        "line": 383
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "Örn: Kuzey Kutbu İkmal Hattı",
+        "inputType": "text",
+        "placeholder": "Örn: Kuzey Kutbu İkmal Hattı",
+        "line": 157
+      },
+      {
+        "type": "input",
+        "label": "date",
+        "inputType": "date",
+        "line": 167
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 174
+      },
+      {
+        "type": "input",
+        "label": "datetime-local",
+        "inputType": "datetime-local",
+        "line": 259
+      },
+      {
+        "type": "input",
+        "label": "datetime-local",
+        "inputType": "datetime-local",
+        "line": 263
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 279
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 286
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 293
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 19,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "569b02cca48c4461977b81ee423cd440",
+    "screenTitle": "Görev Detayı",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "arrow_back",
+        "line": 170
+      },
+      {
+        "type": "button",
+        "label": "Düzenle",
+        "line": 179
+      },
+      {
+        "type": "button",
+        "label": "Paylaş",
+        "line": 183
+      },
+      {
+        "type": "button",
+        "label": "Arşivle",
+        "line": 187
+      },
+      {
+        "type": "button",
+        "label": "BAŞLAT",
+        "line": 191
+      },
+      {
+        "type": "button",
+        "label": "add",
+        "line": 292
+      },
+      {
+        "type": "button",
+        "label": "remove",
+        "line": 295
+      },
+      {
+        "type": "button",
+        "label": "my_location",
+        "line": 298
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "arrow_back",
+        "line": 170
+      },
+      {
+        "type": "button",
+        "label": "Düzenle",
+        "line": 179
+      },
+      {
+        "type": "button",
+        "label": "Paylaş",
+        "line": 183
+      },
+      {
+        "type": "button",
+        "label": "Arşivle",
+        "line": 187
+      },
+      {
+        "type": "button",
+        "label": "BAŞLAT",
+        "line": 191
+      },
+      {
+        "type": "button",
+        "label": "add",
+        "line": 292
+      },
+      {
+        "type": "button",
+        "label": "remove",
+        "line": 295
+      },
+      {
+        "type": "button",
+        "label": "my_location",
+        "line": 298
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 8,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "64261d6712ba45b6bb1222244469f62e",
+    "screenTitle": "Ana Ekran - Dashboard",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Ana Ekran",
+        "href": "#",
+        "line": 117
+      },
+      {
+        "type": "link",
+        "label": "İstatistikler",
+        "href": "#",
+        "line": 122
+      },
+      {
+        "type": "link",
+        "label": "Ayarlar",
+        "href": "#",
+        "line": 127
+      },
+      {
+        "type": "button",
+        "label": "Yeni Görev Ekle",
+        "line": 133
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 151
+      },
+      {
+        "type": "button",
+        "label": "account_circle",
+        "line": 154
+      },
+      {
+        "type": "button",
+        "label": "Tümü",
+        "line": 177
+      },
+      {
+        "type": "button",
+        "label": "Planlanan",
+        "line": 181
+      },
+      {
+        "type": "button",
+        "label": "Devam Eden",
+        "line": 185
+      },
+      {
+        "type": "button",
+        "label": "Tamamlanan",
+        "line": 189
+      },
+      {
+        "type": "button",
+        "label": "more_vert",
+        "line": 272
+      },
+      {
+        "type": "button",
+        "label": "Detayları İncele",
+        "line": 296
+      },
+      {
+        "type": "input",
+        "label": "Görev veya personel ara...",
+        "inputType": "text",
+        "placeholder": "Görev veya personel ara...",
+        "line": 148
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Ana Ekran",
+        "href": "#",
+        "line": 117
+      },
+      {
+        "type": "link",
+        "label": "İstatistikler",
+        "href": "#",
+        "line": 122
+      },
+      {
+        "type": "link",
+        "label": "Ayarlar",
+        "href": "#",
+        "line": 127
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "Yeni Görev Ekle",
+        "line": 133
+      },
+      {
+        "type": "button",
+        "label": "notifications",
+        "line": 151
+      },
+      {
+        "type": "button",
+        "label": "account_circle",
+        "line": 154
+      },
+      {
+        "type": "button",
+        "label": "Tümü",
+        "line": 177
+      },
+      {
+        "type": "button",
+        "label": "Planlanan",
+        "line": 181
+      },
+      {
+        "type": "button",
+        "label": "Devam Eden",
+        "line": 185
+      },
+      {
+        "type": "button",
+        "label": "Tamamlanan",
+        "line": 189
+      },
+      {
+        "type": "button",
+        "label": "more_vert",
+        "line": 272
+      },
+      {
+        "type": "button",
+        "label": "Detayları İncele",
+        "line": 296
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "Görev veya personel ara...",
+        "inputType": "text",
+        "placeholder": "Görev veya personel ara...",
+        "line": 148
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 13,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  }
+]
