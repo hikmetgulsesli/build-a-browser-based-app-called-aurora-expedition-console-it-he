@@ -1,0 +1,74 @@
+[
+  {
+    "screenId": "8fbfa8c44aa240bbbf7003407b357d54",
+    "title": "Sistem Hatası",
+    "componentName": "SistemHatasi",
+    "file": "src/screens/SistemHatasi.tsx",
+    "buttons": 2,
+    "inputs": 0,
+    "links": 0
+  },
+  {
+    "screenId": "799631347a654708bb55ea7e3cd2f101",
+    "title": "İstatistikler ve Analiz",
+    "componentName": "IstatistiklerVeAnaliz",
+    "file": "src/screens/IstatistiklerVeAnaliz.tsx",
+    "buttons": 4,
+    "inputs": 0,
+    "links": 3
+  },
+  {
+    "screenId": "8c79c500f4e3481791d8c1c6d3b1ed99",
+    "title": "Henüz Veri Yok",
+    "componentName": "HenuzVeriYok",
+    "file": "src/screens/HenuzVeriYok.tsx",
+    "buttons": 6,
+    "inputs": 0,
+    "links": 3
+  },
+  {
+    "screenId": "b012924ac7484da38770ec732ecfd3d3",
+    "title": "Sistem Ayarları",
+    "componentName": "SistemAyarlari",
+    "file": "src/screens/SistemAyarlari.tsx",
+    "buttons": 9,
+    "inputs": 3,
+    "links": 3
+  },
+  {
+    "screenId": "baea0a91d7ed4ca997d90112004f01ed",
+    "title": "Kullanıcı Profili",
+    "componentName": "KullaniciProfili",
+    "file": "src/screens/KullaniciProfili.tsx",
+    "buttons": 7,
+    "inputs": 1,
+    "links": 3
+  },
+  {
+    "screenId": "f6dd261f2deb4510b2ea8dacf4230f5d",
+    "title": "Yeni Görev Ekle / Düzenle",
+    "componentName": "YeniGorevEkleDuzenle",
+    "file": "src/screens/YeniGorevEkleDuzenle.tsx",
+    "buttons": 10,
+    "inputs": 7,
+    "links": 0
+  },
+  {
+    "screenId": "569b02cca48c4461977b81ee423cd440",
+    "title": "Görev Detayı",
+    "componentName": "GorevDetayi",
+    "file": "src/screens/GorevDetayi.tsx",
+    "buttons": 8,
+    "inputs": 0,
+    "links": 0
+  },
+  {
+    "screenId": "64261d6712ba45b6bb1222244469f62e",
+    "title": "Ana Ekran - Dashboard",
+    "componentName": "AnaEkranDashboard",
+    "file": "src/screens/AnaEkranDashboard.tsx",
+    "buttons": 9,
+    "inputs": 1,
+    "links": 3
+  }
+]
