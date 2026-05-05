@@ -8,10 +8,17 @@
 // 4. Replace placeholder data with props/state
 
 import { useState } from "react";
+import type { ScreenName } from "../types/domain";
 
-interface HenuzVeriYokProps {}
+interface HenuzVeriYokProps {
+  onNewMission: () => void;
+  onNavigate: (screen: ScreenName) => void;
+}
 
-export function HenuzVeriYok(props: HenuzVeriYokProps) {
+export function HenuzVeriYok({
+  onNewMission,
+  onNavigate,
+}: HenuzVeriYokProps) {
   return (
     <>
       {/* SideNavBar */}
@@ -23,19 +30,19 @@ export function HenuzVeriYok(props: HenuzVeriYokProps) {
       <nav className="flex-1 overflow-y-auto">
       <ul className="flex flex-col gap-1 font-inter antialiased text-sm tracking-tight">
       <li>
-      <a className="flex items-center gap-3 px-4 py-3 text-blue-400 bg-slate-800/50 border-r-2 border-blue-500 active:scale-[0.98] transition-transform duration-150" href="#">
+      <a className="flex items-center gap-3 px-4 py-3 text-blue-400 bg-slate-800/50 border-r-2 border-blue-500 active:scale-[0.98] transition-transform duration-150 cursor-pointer" onClick={() => onNavigate('dashboard')}>
       <span className="material-symbols-outlined" style={{fontVariationSettings: "'FILL' 1"}}>dashboard</span>
                               Ana Ekran
                           </a>
       </li>
       <li>
-      <a className="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-100 hover:bg-slate-800/30 transition-colors active:scale-[0.98] transition-transform duration-150" href="#">
+      <a className="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-100 hover:bg-slate-800/30 transition-colors active:scale-[0.98] transition-transform duration-150 cursor-pointer" onClick={() => onNavigate('stats')}>
       <span className="material-symbols-outlined">leaderboard</span>
                               İstatistikler
                           </a>
       </li>
       <li>
-      <a className="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-100 hover:bg-slate-800/30 transition-colors active:scale-[0.98] transition-transform duration-150" href="#">
+      <a className="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-slate-100 hover:bg-slate-800/30 transition-colors active:scale-[0.98] transition-transform duration-150 cursor-pointer" onClick={() => onNavigate('settings')}>
       <span className="material-symbols-outlined">settings</span>
                               Ayarlar
                           </a>
@@ -43,7 +50,7 @@ export function HenuzVeriYok(props: HenuzVeriYokProps) {
       </ul>
       </nav>
       <div className="px-4 mt-auto pt-6">
-      <button className="w-full h-touch-target bg-primary-container text-on-primary-container font-h3 text-h3 rounded flex items-center justify-center gap-2 hover:brightness-110 active:scale-[0.98] transition-all focus-visible:ring-2 focus-visible:ring-primary-container focus-visible:outline-none">
+      <button className="w-full h-touch-target bg-primary-container text-on-primary-container font-h3 text-h3 rounded flex items-center justify-center gap-2 hover:brightness-110 active:scale-[0.98] transition-all focus-visible:ring-2 focus-visible:ring-primary-container focus-visible:outline-none cursor-pointer" onClick={onNewMission}>
       <span className="material-symbols-outlined text-[18px]">add</span>
                       Yeni Görev Ekle
                   </button>
@@ -60,13 +67,13 @@ export function HenuzVeriYok(props: HenuzVeriYokProps) {
       <div className="text-xl font-black text-slate-100 font-inter text-sm font-medium tracking-tight">Aurora Expedition Console</div>
       </div>
       <div className="flex items-center gap-2 md:gap-4">
-      <button className="text-slate-400 hover:text-blue-400 transition-colors cursor-pointer active:opacity-80 h-10 w-10 flex items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-outline-variant">
+      <button className="text-slate-400 hover:text-blue-400 transition-colors cursor-pointer active:opacity-80 h-10 w-10 flex items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-outline-variant" onClick={() => onNavigate('profile')} aria-label="Arama">
       <span className="material-symbols-outlined">search</span>
       </button>
-      <button className="text-slate-400 hover:text-blue-400 transition-colors cursor-pointer active:opacity-80 h-10 w-10 flex items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-outline-variant">
+      <button className="text-slate-400 hover:text-blue-400 transition-colors cursor-pointer active:opacity-80 h-10 w-10 flex items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-outline-variant" onClick={() => onNavigate('profile')} aria-label="Bildirimler">
       <span className="material-symbols-outlined">notifications</span>
       </button>
-      <button className="text-slate-400 hover:text-blue-400 transition-colors cursor-pointer active:opacity-80 h-10 w-10 flex items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-outline-variant">
+      <button className="text-slate-400 hover:text-blue-400 transition-colors cursor-pointer active:opacity-80 h-10 w-10 flex items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-outline-variant" onClick={() => onNavigate('profile')} aria-label="Profil">
       <span className="material-symbols-outlined">account_circle</span>
       </button>
       </div>
@@ -90,7 +97,7 @@ export function HenuzVeriYok(props: HenuzVeriYokProps) {
                           Kutup keşiflerinizi başlatmak için ilk görevinizi planlayın. Hedef koordinatları, ekipmanları ve takım üyelerini belirleyerek operasyonu başlatabilirsiniz.
                       </p>
       {/* CTA */}
-      <button className="h-touch-target px-8 bg-primary-container text-on-primary-container font-h3 text-h3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary-container/90 active:scale-[0.98] transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-surface focus-visible:ring-primary-container focus-visible:outline-none shadow-lg shadow-primary-container/20">
+      <button className="h-touch-target px-8 bg-primary-container text-on-primary-container font-h3 text-h3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary-container/90 active:scale-[0.98] transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-surface focus-visible:ring-primary-container focus-visible:outline-none shadow-lg shadow-primary-container/20 cursor-pointer" onClick={onNewMission}>
       <span className="material-symbols-outlined text-[20px]">add</span>
                           İlk Görevi Oluştur
                       </button>
