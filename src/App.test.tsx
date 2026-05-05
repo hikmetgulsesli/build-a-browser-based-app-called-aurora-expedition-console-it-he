@@ -1,7 +1,8 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
-import { renderHook, act } from '@testing-library/react';
+import { renderHook, act, render, screen, fireEvent } from '@testing-library/react';
 import { useAppState } from '../src/hooks/useAppState';
 import { loadState, saveState, clearState } from '../src/utils/storage';
+import App from '../src/App';
 
 // Helper to mock localStorage
 function mockLocalStorage() {
@@ -152,5 +153,40 @@ describe('useAppState', () => {
       result.current.navigate('stats');
     });
     expect(storage.setItem).toHaveBeenCalled();
+  });
+});
+
+describe('App component', () => {
+  let storage: ReturnType<typeof mockLocalStorage>;
+
+  beforeEach(() => {
+    storage = mockLocalStorage();
+    vi.stubGlobal('localStorage', storage);
+  });
+
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
+  it('should navigate back to mission-detail when canceling edit', () => {
+    render(<App />);
+
+    // Click first mission name to view detail (clicking text bubbles to button)
+    const missionCard = screen.getByText(/Operasyon Kış Fırtınası/i);
+    fireEvent.click(missionCard);
+
+    // Click edit button
+    const editButton = screen.getByRole('button', { name: /Düzenle/i });
+    fireEvent.click(editButton);
+
+    // Verify we are in edit mode
+    expect(screen.getByText(/Operasyonu Düzenle/i)).toBeInTheDocument();
+
+    // Click cancel
+    const cancelButton = screen.getByRole('button', { name: /İptal/i });
+    fireEvent.click(cancelButton);
+
+    // Should be back on mission detail, not dashboard
+    expect(screen.getByText(/Operasyon Kış Fırtınası/i)).toBeInTheDocument();
   });
 });
